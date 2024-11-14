@@ -1,0 +1,135 @@
+---
+title: deploy ktor server to a vps
+---
+
+# Deploy Ktor application to a VPS using github actions
+<div class="h-1 w-full my-4 bg-slate-800"></div>
+
+## Overview
+In this article, we will be deploying a Ktor server to a digital-ocean droplet.
+The setup will be as follows:
+* Github action will build a fatJar and docker image.
+* Github action will run the docker image on a VPS.
+
+## Setting up the project
+Ktor application can be deployed in many [ways](https://ktor.io/docs/server-deployment.html). In this article,
+we will build a `fatJar` using the Ktor Gradle plugin. To build a `fatJar` configure the Ktor plugin as follows:
+1. Configure the Ktor Plugin.
+```kts
+plugins {
+    id("io.ktor.plugin") version "3.0.1"
+}
+```
+2. Make sure the [main class](https://ktor.io/docs/server-dependencies.html#create-entry-point) is configured.
+```kts
+application {
+    mainClass.set("io.ktor.server.netty.EngineMain")
+}
+```
+3. Set the name of jar file.
+```kts
+ktor {
+    fatJar {
+        archiveFileName.set("hello-world.jar")
+    }
+}
+```
+
+## Creating the Dockerfile
+```dockerfile
+FROM amazoncorretto:17
+COPY build/libs/fat.jar /app/fat.jar
+ENTRYPOINT ["java", "-jar", "/app/fat.jar"]
+```
+
+
+## Github Action Setup
+Create a file called `cd.yml` in `.github/workflows` at the root of your project.
+```
+.
+├── .github
+│   └── workflows
+│       └── cd.yml
+└── project-files
+
+```
+
+In the `cd.yml` file we will create 3 separate [github jobs](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/using-jobs-in-a-workflow): one to build the jar file, one for building docker image, and one for running the application on the VPS.
+1. The first job builds the `fatjar` and uploads it as an artifact that we can use in our subsequent jobs.
+```yaml
+build-jar-file:
+  runs-on: ubuntu-22.04
+  steps:
+    - name: Check out repository code
+      uses: actions/checkout@v4
+
+    - uses: actions/setup-java@v4
+      with:
+        distribution: 'oracle'
+        java-version: '17'
+        cache: 'gradle'
+        cache-dependency-path: |
+          **/.gradle*
+          **/gradle-wrapper.properties
+
+    - run:
+        ./gradlew build
+
+    - name: upload the jar file
+      uses: actions/upload-artifact@v4
+      with:
+        name: statsify-jar
+        path: build/libs/fat.jar
+        overwrite: true
+```
+2. Create and publish the docker image.
+```yaml
+push-to-docker:
+  needs: [ build-jar-file ]
+  runs-on: ubuntu-22.04
+  permissions:
+    packages: write
+    contents: read
+  steps:
+    - name: Check out repository code
+      uses: actions/checkout@v4
+
+    - name: download the jar file
+      uses: actions/download-artifact@v4
+      with:
+        name: statsify-jar
+        path: build/libs/
+    - name: echo files
+      run: ls -lh build/libs/
+
+    - name: Build image
+      run: docker build . --file Dockerfile --tag $IMAGE_NAME
+
+    - name: Log in to registry
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+        #
+    - name: Push image
+      run: |
+        IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
+        docker tag $IMAGE_NAME $IMAGE_ID
+        docker push $IMAGE_ID
+```
+3. Run the docker image on VPS.
+```yaml
+name: Build the Jar File
+on: [ push ]
+```
+
+## Dockerize the app
+```yaml
+docker action
+```
+
+[//]: # (## Handling ENV variables)
+https://github.com/appleboy/ssh-action + github secrets should do the trick
+
+
+## Docker compose
+the docker compose file needs to reach the vps. strategies for that?
+* scp the file?
+* maybe rsync

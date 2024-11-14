@@ -1,5 +1,5 @@
 ---
-import "../styles/global.css";
+import "../styles/writings.css";
 ---
 
 <!doctype html>
@@ -7,11 +7,15 @@ import "../styles/global.css";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
   </head>
   <body class="bg-background font-mono">
     <div
       class="container mx-auto my-0 lg:max-w-screen-md text-zinc-50 p-5 text-sm md:text-xl"
     >
+      <a href="/" class="hover:cursor-pointer hover:bg-slate-800 text-blue-500"
+        >[ home ]</a
+      >
       <slot />
     </div>
   </body>

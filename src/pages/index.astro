@@ -1,7 +1,7 @@
 ---
-// src/pages/blog.astro
+// src/pages/writings.astro
 import { getCollection } from "astro:content";
-const posts = await getCollection("blog");
+const posts = await getCollection("writings");
 ---
 
 <!doctype html>
@@ -15,8 +15,9 @@ const posts = await getCollection("blog");
     <meta name="generator" content={Astro.generator} />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
     <link rel="manifest" href="/favicon_io/site.webmanifest" />
+    <title>mnprt</title>
   </head>
   <body class="bg-background font-sans">
     <div
@@ -32,11 +33,12 @@ const posts = await getCollection("blog");
           <h1 class="text-xl md:text-4xl">manpreet</h1>
           <ul class="flex flex-col gap-2">
             <li>
-              [ <a
+              <a
                 href="https://github.com/manpreeeeeet"
                 target="_blank"
-                class="underline">github</a
-              > ]
+                class="hover:cursor-pointer hover:bg-slate-800 text-blue-500"
+                >[ <span class="underline">github</span> ]
+              </a>
             </li>
           </ul>
         </div>
@@ -47,12 +49,15 @@ const posts = await getCollection("blog");
       </div>
       <div class="h-1 w-full my-4 bg-slate-800"></div>
       <div>
-        <h1 class="text-2xl pb-4">writings:</h1>
+        <h1 class="text-sm md:text-xl pb-4">writings:</h1>
         <ul class="flex flex-col gap-2">
           {
             posts.map((post) => (
-              <a href={`/blog/${post.slug}/`} target="_blank">
-                <li class="hover:cursor-pointer hover:bg-slate-800 text-blue-500">
+              <a
+                href={`/writings/${post.slug}/`}
+                class="visited:text-purple-500 text-blue-500"
+              >
+                <li class="hover:cursor-pointer hover:bg-slate-800">
                   [ {post.data.title} ]
                 </li>
               </a>
@@ -65,10 +70,12 @@ const posts = await getCollection("blog");
         <h1 class="text-sm md:text-xl pb-4">contact me:</h1>
         <ul class="flex flex-col gap-2">
           <li>
-            [ email:&nbsp;&nbsp;<a
+            <a
               href="mailto:manpreetrahal27@gmail.com"
-              class="underline">manpreetrahal27@gmail.com</a
-            > ]
+              class="hover:cursor-pointer hover:bg-slate-800 text-blue-500"
+            >
+              [ email: <span class="underline">manpreetrahal27@gmail.com</span> ]
+            </a>
           </li>
           <li>[ discord: manpreeeeeet]</li>
         </ul>
