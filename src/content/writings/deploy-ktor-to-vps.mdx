@@ -1,5 +1,5 @@
 ---
-title: deploy ktor server to a vps
+title: deploy ktor application to a vps
 ---
 
 # Deploy Ktor application to a VPS using github actions
@@ -40,6 +40,54 @@ ktor {
 FROM amazoncorretto:17
 COPY build/libs/fat.jar /app/fat.jar
 ENTRYPOINT ["java", "-jar", "/app/fat.jar"]
+```
+
+Create a docker compose file called `compose.yaml`
+```yaml
+services:
+  ktor:
+    container_name: ktor_app
+    build: .
+    ports:
+      - "8080:8080"
+    networks:
+      - backend_network
+    depends_on:
+      - db
+  db:
+    image: postgres:16
+    container_name: postgres_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ktor_app_db
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_HOST: ${DB_HOST:-postgres}
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d ktor_app_db -u ${DB_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - backend_network
+
+volumes:
+  postgres_data:
+
+networks:
+  backend_network:
+    driver: bridge
+```
+Your directory should look like this after these steps
+```
+.
+├── Dockerfile
+└── compose.yaml
 ```
 
 
@@ -116,20 +164,5 @@ push-to-docker:
 ```
 3. Run the docker image on VPS.
 ```yaml
-name: Build the Jar File
-on: [ push ]
+scp the docker compose, .env -> docker compose up -> enjoy
 ```
-
-## Dockerize the app
-```yaml
-docker action
-```
-
-[//]: # (## Handling ENV variables)
-https://github.com/appleboy/ssh-action + github secrets should do the trick
-
-
-## Docker compose
-the docker compose file needs to reach the vps. strategies for that?
-* scp the file?
-* maybe rsync

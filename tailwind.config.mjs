@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         mono: ["JetBrains Mono", "monospace"],
         sans: [
+          "Helvetica",
           "sans-serif",
           "Apple Color Emoji",
           "Segoe UI Emoji",

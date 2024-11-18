@@ -29,7 +29,7 @@
   }
 
   p {
-    @apply text-sm md:text-xl;
+    @apply text-sm md:text-base;
   }
 
   * {
@@ -79,11 +79,11 @@
   }
 
   p {
-    @apply leading-6 md:leading-8 my-4;
+    @apply leading-6 my-4;
   }
 
   li {
-    @apply my-4 list-inside -indent-6 pl-6;
+    @apply my-2 list-inside -indent-6 pl-6;
   }
 
   ul li {
@@ -99,7 +99,7 @@
   }
 
   p code {
-    @apply bg-[#24292e] inline-block rounded-sm text-sm md:text-xl;
+    @apply bg-[#24292e] inline-block rounded-sm text-sm md:text-base;
   }
 
   blockquote {
