@@ -32,8 +32,9 @@ jobs:
           username: ${{ vars.VPS_USERNAME}}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
-          source: "dist/*"
-          target: /var/www/mnprt
+          strip_components: 1
+          source: "dist/"
+          target: "/var/www/mnprt"
 
       - name: Set up SSH Key and reload nginx
         uses: appleboy/ssh-action@master
