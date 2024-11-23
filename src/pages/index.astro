@@ -45,16 +45,16 @@ const posts = await getCollection("writings");
       </div>
       <div class="h-1 w-full my-4 bg-slate-800"></div>
       <div class="flex flex-col gap-4">
-        <p>hey, i am manpreet. i love the kotlin.</p>
+        <p>hey! i am manpreet. i love the kotlin.</p>
       </div>
       <div class="h-1 w-full my-4 bg-slate-800"></div>
       <div>
-        <h1 class="text-sm md:text-xl pb-4">writings:</h1>
+        <h1 class="text-sm md:text-xl pb-4">posts</h1>
         <ul class="flex flex-col gap-2">
           {
             posts.map((post) => (
               <a
-                href={`/writings/${post.slug}/`}
+                href={`/posts/${post.slug}/`}
                 class="visited:text-purple-500 text-blue-500"
               >
                 <li class="hover:cursor-pointer hover:bg-slate-800">
@@ -67,7 +67,7 @@ const posts = await getCollection("writings");
       </div>
       <div class="h-1 w-full my-4 bg-slate-800"></div>
       <div>
-        <h1 class="text-sm md:text-xl pb-4">contact me:</h1>
+        <h1 class="text-sm md:text-xl pb-4">contact</h1>
         <ul class="flex flex-col gap-2">
           <li>
             <a

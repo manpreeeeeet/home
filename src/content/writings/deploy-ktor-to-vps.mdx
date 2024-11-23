@@ -1,48 +1,53 @@
 ---
-title: deploy ktor application to a vps
+title: deploying ktor application in a vps
 ---
+import { Image } from 'astro:assets';
+import githubActionImage from '../assets/github-action.png';
 
-# Deploy Ktor application to a VPS using github actions
+
+# Deploying Ktor app in a VPS using github actions
 <div class="h-1 w-full my-4 bg-slate-800"></div>
 
 ## Overview
-In this article, we will be deploying a Ktor server to a digital-ocean droplet.
-The setup will be as follows:
-* Github action will build a fatJar and docker image.
-* Github action will run the docker image on a VPS.
+This is my simple docker + VPS setup for deploying Ktor application. Read [ktor's deployment documentation](https://ktor.io/docs/server-deployment.html) if you want to learn about different/right way of deploying a Ktor app.
+
+In this setup `github actions` build and push the docker image to [`ghcr`](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), and then
+we trigger a new deployment on the server.
+
 
 ## Setting up the project
-Ktor application can be deployed in many [ways](https://ktor.io/docs/server-deployment.html). In this article,
-we will build a `fatJar` using the Ktor Gradle plugin. To build a `fatJar` configure the Ktor plugin as follows:
-1. Configure the Ktor Plugin.
+### Ktor Gradle Plugin
+Configure [`ktor gradle plugin`](https://ktor.io/docs/server-fatjar.html), so we can build a `fatJar` using `gradlew fatJar` command.
 ```kts
 plugins {
     id("io.ktor.plugin") version "3.0.1"
 }
-```
-2. Make sure the [main class](https://ktor.io/docs/server-dependencies.html#create-entry-point) is configured.
-```kts
+
 application {
+    // https://ktor.io/docs/server-dependencies.html#create-entry-point
     mainClass.set("io.ktor.server.netty.EngineMain")
 }
-```
-3. Set the name of jar file.
-```kts
+
 ktor {
     fatJar {
-        archiveFileName.set("hello-world.jar")
+        // set the fatJar name here
+        archiveFileName.set("server.jar")
     }
 }
 ```
 
-## Creating the Dockerfile
+### Dockerfile
+We will use a simple `Dockerfile` for our `runtime`. This `runtime image` requires us to build the `fatJar` externally before building our docker image. 
+
+
 ```dockerfile
 FROM amazoncorretto:17
 COPY build/libs/fat.jar /app/fat.jar
 ENTRYPOINT ["java", "-jar", "/app/fat.jar"]
 ```
 
-Create a docker compose file called `compose.yaml`
+
+Create a Docker Compose configuration that includes our application and its database.
 ```yaml
 services:
   ktor:
@@ -91,19 +96,9 @@ Your directory should look like this after these steps
 ```
 
 
-## Github Action Setup
-Create a file called `cd.yml` in `.github/workflows` at the root of your project.
-```
-.
-├── .github
-│   └── workflows
-│       └── cd.yml
-└── project-files
-
-```
-
-In the `cd.yml` file we will create 3 separate [github jobs](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/using-jobs-in-a-workflow): one to build the jar file, one for building docker image, and one for running the application on the VPS.
-1. The first job builds the `fatjar` and uploads it as an artifact that we can use in our subsequent jobs.
+### Github Action Setup
+Create a [github workflow](https://docs.github.com/en/actions/writing-workflows/about-workflows) that deploys whenever new changes are merged into our `main` branch.
+<Image src={githubActionImage} alt="A rocketship in space." class="max-w-[100%] mx-auto my-4"/>
 ```yaml
 build-jar-file:
   runs-on: ubuntu-22.04
@@ -129,40 +124,20 @@ build-jar-file:
         name: statsify-jar
         path: build/libs/fat.jar
         overwrite: true
-```
-2. Create and publish the docker image.
-```yaml
-push-to-docker:
-  needs: [ build-jar-file ]
-  runs-on: ubuntu-22.04
-  permissions:
-    packages: write
-    contents: read
-  steps:
-    - name: Check out repository code
-      uses: actions/checkout@v4
-
-    - name: download the jar file
-      uses: actions/download-artifact@v4
-      with:
-        name: statsify-jar
-        path: build/libs/
-    - name: echo files
-      run: ls -lh build/libs/
 
     - name: Build image
       run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
     - name: Log in to registry
       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-        #
+
     - name: Push image
       run: |
         IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
         docker tag $IMAGE_NAME $IMAGE_ID
         docker push $IMAGE_ID
 ```
-3. Run the docker image on VPS.
-```yaml
-scp the docker compose, .env -> docker compose up -> enjoy
-```
+
+## Final notes
+* No rolling release: This setup stops the running application before deploying the new version.
+* Add a script to trigger a deployment. Add github secrets.
