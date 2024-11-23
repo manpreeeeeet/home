@@ -1,22 +1,27 @@
 ---
 import "../styles/writings.css";
+import Header from "./Header.astro";
+export interface Props {
+  title?: string;
+}
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="/favicon.png" />
-  </head>
+  <Header title={title} />
   <body class="bg-background font-mono">
     <div
       class="container mx-auto my-0 lg:max-w-[850px] text-zinc-50 p-5 text-sm md:text-base"
     >
-      <a href="/" class="hover:cursor-pointer hover:bg-slate-800 text-blue-500"
+      <a
+        href="/"
+        class="hover:cursor-pointer hover:bg-slate-800 text-blue-500 py-2"
         >[ home ]</a
       >
       <slot />
+      <div class="my-10"></div>
+      <div class="h-1 w-full my-4 bg-slate-800"></div>
     </div>
   </body>
 </html>

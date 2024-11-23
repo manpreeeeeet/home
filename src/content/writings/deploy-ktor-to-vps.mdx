@@ -11,9 +11,8 @@ import githubActionImage from '../assets/github-action.png';
 ## Overview
 This is my simple docker + VPS setup for deploying Ktor application. Read [ktor's deployment documentation](https://ktor.io/docs/server-deployment.html) if you want to learn about different/right way of deploying a Ktor app.
 
-In this setup `github actions` build and push the docker image to [`ghcr`](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), and then
-we trigger a new deployment on the server.
-
+In this setup we deploy automatically whenever a code change is pushed to `GitHub`. We rely on [`github actions`](https://docs.github.com/en/actions) to build and push the docker image to [`ghcr`](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), and to trigger a new deployment on the server.
+<Image src={githubActionImage} alt="A rocketship in space." class="max-w-[100%] mx-auto my-4"/>
 
 ## Setting up the project
 ### Ktor Gradle Plugin
@@ -31,30 +30,34 @@ application {
 ktor {
     fatJar {
         // set the fatJar name here
-        archiveFileName.set("server.jar")
+        archiveFileName.set("app.jar")
     }
 }
 ```
 
 ### Dockerfile
-We will use a simple `Dockerfile` for our `runtime`. This `runtime image` requires us to build the `fatJar` externally before building our docker image. 
+We will use a simple `Dockerfile`. This `image` requires us to build the `fatJar` externally before building our docker image.
 
 
 ```dockerfile
 FROM amazoncorretto:17
-COPY build/libs/fat.jar /app/fat.jar
-ENTRYPOINT ["java", "-jar", "/app/fat.jar"]
+COPY build/libs/app.jar /app/app.jar
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
 ```
 
 
-Create a Docker Compose configuration that includes our application and its database.
+Create a Docker Compose configuration that includes our application and its `database`.
 ```yaml
 services:
   ktor:
     container_name: ktor_app
-    build: .
+    environment:
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+    image: ghcr.io/<username>/ktor-sample:latest
     ports:
-      - "8080:8080"
+      - "9080:9080"
     networks:
       - backend_network
     depends_on:
@@ -65,14 +68,13 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: ktor_app_db
+      POSTGRES_DB: ${DB_NAME}
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_HOST: ${DB_HOST:-postgres}
     ports:
       - "5432:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -d ktor_app_db -u ${DB_USER}"]
+      test: ["CMD-SHELL", "pg_isready -d ${DB_NAME} -u ${DB_USER}"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -98,46 +100,99 @@ Your directory should look like this after these steps
 
 ### Github Action Setup
 Create a [github workflow](https://docs.github.com/en/actions/writing-workflows/about-workflows) that deploys whenever new changes are merged into our `main` branch.
-<Image src={githubActionImage} alt="A rocketship in space." class="max-w-[100%] mx-auto my-4"/>
+
 ```yaml
-build-jar-file:
-  runs-on: ubuntu-22.04
-  steps:
-    - name: Check out repository code
-      uses: actions/checkout@v4
+name: Build and deploy to VPS
+on:
+  push:
+    branches:
+      - main
+permissions:
+    packages: write
+    contents: read
+env:
+  IMAGE_NAME: ktor-app
+jobs:
+  build-jar-file:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
 
-    - uses: actions/setup-java@v4
-      with:
-        distribution: 'oracle'
-        java-version: '17'
-        cache: 'gradle'
-        cache-dependency-path: |
-          **/.gradle*
-          **/gradle-wrapper.properties
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'oracle'
+          java-version: '17'
+          cache: 'gradle'
+          cache-dependency-path: |
+            **/.gradle*
+            **/gradle-wrapper.properties
 
-    - run:
-        ./gradlew build
+      - run:
+          ./gradlew build
 
-    - name: upload the jar file
-      uses: actions/upload-artifact@v4
-      with:
-        name: statsify-jar
-        path: build/libs/fat.jar
-        overwrite: true
+      - name: Build image
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
-    - name: Build image
-      run: docker build . --file Dockerfile --tag $IMAGE_NAME
+      - name: Log in to registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-    - name: Log in to registry
-      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      - name: Push image
+        run: |
+          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
 
-    - name: Push image
-      run: |
-        IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
-        docker tag $IMAGE_NAME $IMAGE_ID
-        docker push $IMAGE_ID
+          # This changes all uppercase characters to lowercase.
+          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
+
+          docker tag $IMAGE_NAME $IMAGE_ID
+          docker push $IMAGE_ID
+
+      - name: Create .env file
+        run: |
+          echo "DB_USER=${{ secrets.DB_USER }}" >> .env
+          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
+          echo "DB_NAME=${{ secrets.DB_NAME }}" >> .env
+
+      - name: copy file via ssh key
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ vars.VPS_IP  }}
+          username: ${{ vars.VPS_USERNAME}}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          source: "compose.yaml,.env"
+          target: ktor-sample
+
+      - name: Set up SSH Key and Deploy my App on Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ vars.VPS_IP }}
+          username: ${{ vars.VPS_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd ~/ktor-sample
+            docker compose pull
+            docker compose --env-file .env up -d
 ```
+
+[Secrets](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions) required by the github workflow:
+```shell
+# private key required by github action to ssh into the VPS
+SSH_PRIVATE_KEY=
+DB_NAME=
+DB_PASSWORD=
+DB_USER=
+```
+
+[Variables]() required by the workflow:
+```shell
+VPS_IP=
+VPS_USERNAME=
+```
+
 
 ## Final notes
 * No rolling release: This setup stops the running application before deploying the new version.
-* Add a script to trigger a deployment. Add github secrets.
+* Assumption: VPS has docker installed and is authenticated with [`ghcr`](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-in-a-github-actions-workflow).
+* Due to the way docker compose is setup the `jdbc` url in our application should look like: `"jdbc:postgresql://db:5432/$dbName"` i.e. should use `db` as a hostname rather than `localhost`.

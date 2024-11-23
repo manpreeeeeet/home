@@ -1,24 +1,13 @@
 ---
 // src/pages/writings.astro
 import { getCollection } from "astro:content";
+import Header from "../components/Header.astro";
 const posts = await getCollection("writings");
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Global Metadata -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.png" />
-    <link rel="manifest" href="/favicon_io/site.webmanifest" />
-    <title>mnprt</title>
-  </head>
+  <Header title="mnprt" />
   <body class="bg-background font-sans">
     <div
       class="container mx-auto my-0 lg:max-w-screen-md text-zinc-50 p-5 text-sm md:text-base"
@@ -30,7 +19,7 @@ const posts = await getCollection("writings");
           src="/frieren.png"
         />
         <div class="flex flex-col gap-4 md:gap-10">
-          <h1 class="text-xl md:text-4xl">manpreet</h1>
+          <h1 class="text-xl md:text-4xl">mnprt.me</h1>
           <ul class="flex flex-col gap-2">
             <li>
               <a
@@ -74,7 +63,7 @@ const posts = await getCollection("writings");
               href="mailto:manpreetrahal27@gmail.com"
               class="hover:cursor-pointer hover:bg-slate-800 text-blue-500"
             >
-              [ email: <span class="underline">manpreetrahal27@gmail.com</span> ]
+              [ email: <span class="underline">mnprt@mnprt.me</span> ]
             </a>
           </li>
           <li>[ discord: manpreeeeeet]</li>

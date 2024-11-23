@@ -15,6 +15,6 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<WritingLayout>
+<WritingLayout title={post.data.title}>
   <Content />
 </WritingLayout>
