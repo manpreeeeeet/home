@@ -2,6 +2,7 @@
 // src/pages/writings.astro
 import { getCollection } from "astro:content";
 import Header from "../components/Header.astro";
+import Analytics from "@vercel/analytics/astro";
 const posts = await getCollection("writings");
 ---
 
@@ -9,6 +10,7 @@ const posts = await getCollection("writings");
 <html lang="en">
   <Header title="mnprt" />
   <body class="bg-background font-sans">
+    <Analytics />
     <div
       class="container mx-auto my-0 lg:max-w-screen-md text-zinc-50 p-5 text-sm md:text-base"
     >
