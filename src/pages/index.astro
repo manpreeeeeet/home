@@ -4,11 +4,17 @@ import { getCollection } from "astro:content";
 import Header from "../components/Header.astro";
 import Analytics from "@vercel/analytics/astro";
 const posts = await getCollection("writings");
+
+import landingPageOG from "../assets/images/landing-page.png";
 ---
 
 <!doctype html>
 <html lang="en">
-  <Header title="mnprt" />
+  <Header
+    title="mnprt"
+    image={landingPageOG}
+    description="hey! i am manpreet. i love the kotlin."
+  />
   <body class="bg-background font-sans">
     <Analytics />
     <div
@@ -69,6 +75,14 @@ const posts = await getCollection("writings");
               class="hover:cursor-pointer hover:bg-slate-800 text-blue-500"
             >
               [ email: <span class="underline">mnprt@mnprt.me</span> ]
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://bsky.app/profile/mnprt.me"
+              class="hover:cursor-pointer hover:bg-slate-800 text-blue-500"
+            >
+              [ bsky: <span class="underline">mnprt.me</span> ]
             </a>
           </li>
           <li>[ discord: manpreeeeeet ]</li>
