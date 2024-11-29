@@ -3,6 +3,8 @@
 import { getCollection } from "astro:content";
 import Header from "../components/Header.astro";
 import Analytics from "@vercel/analytics/astro";
+import { Image } from "astro:assets";
+import frieren from "../../public/frieren.png";
 const posts = await getCollection("writings");
 
 import landingPageOG from "../assets/images/landing-page.png";
@@ -21,10 +23,11 @@ import landingPageOG from "../assets/images/landing-page.png";
       class="container mx-auto my-0 lg:max-w-screen-md text-zinc-50 p-5 text-sm md:text-base"
     >
       <div class="flex gap-10 mt-20 items-start">
-        <img
+        <Image
           class="w-full max-w-[200px] md:max-w-[400px] h-auto object-contain"
           alt="frieren standing in garden of flowers"
-          src="/frieren.png"
+          loading="eager"
+          src={frieren}
         />
         <div class="flex flex-col gap-4 md:gap-10">
           <h1 class="text-xl md:text-4xl">mnprt.me</h1>
