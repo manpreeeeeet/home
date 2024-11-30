@@ -5,17 +5,17 @@ import { Image } from 'astro:assets';
 import githubActionImage from '../assets/github-action.png';
 
 
-# Deploying Ktor app in a VPS using github actions
+# \# Deploying Ktor app in a VPS using github actions
 <div class="h-1 w-full my-4 bg-slate-800"></div>
 
-## Overview
+## \#\# Overview
 This is my simple docker + VPS setup for deploying Ktor application. Read [ktor's deployment documentation](https://ktor.io/docs/server-deployment.html) if you want to learn about different/right way of deploying a Ktor app.
 
 In this setup we deploy automatically whenever a code change is pushed to `GitHub`. We rely on [`github actions`](https://docs.github.com/en/actions) to build and push the docker image to [`ghcr`](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), and to trigger a new deployment on the server.
 <Image src={githubActionImage} alt="A rocketship in space." class="max-w-[100%] mx-auto my-4"/>
 
-## Setting up the project
-### Ktor Gradle Plugin
+## \#\# Setting up the project
+### \#\#\# Ktor Gradle Plugin
 Configure [`ktor gradle plugin`](https://ktor.io/docs/server-fatjar.html), so we can build a `fatJar` using `gradlew fatJar` command.
 ```kts
 plugins {
@@ -35,7 +35,7 @@ ktor {
 }
 ```
 
-### Dockerfile
+### \#\#\# Dockerfile
 We will use a simple `Dockerfile`. This `image` requires us to build the `fatJar` externally before building our docker image.
 
 
@@ -98,7 +98,7 @@ Your directory should look like this after these steps
 ```
 
 
-### Github Action Setup
+### \#\#\# Github Action Setup
 Create a [github workflow](https://docs.github.com/en/actions/writing-workflows/about-workflows) that deploys whenever new changes are merged into our `main` branch.
 
 ```yaml
@@ -192,7 +192,7 @@ VPS_USERNAME=
 ```
 
 
-## Final notes
+## \#\# Final notes
 * No rolling release: This setup stops the running application before deploying the new version.
 * Assumption: VPS has docker installed and is authenticated with [`ghcr`](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-in-a-github-actions-workflow).
 * Due to the way docker compose is setup the `jdbc` url in our application should look like: `"jdbc:postgresql://db:5432/$dbName"` i.e. should use `db` as a hostname rather than `localhost`.

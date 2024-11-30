@@ -56,7 +56,7 @@
   h3,
   h4,
   h5 {
-    @apply font-bold mt-4 md:mt-8 leading-3;
+    @apply font-bold mt-4 md:mt-8 leading-3 text-peacock;
   }
   h1 {
     @apply text-xl md:text-3xl;
@@ -83,7 +83,7 @@
   }
 
   li {
-    @apply my-2 list-inside -indent-6 pl-6;
+    @apply my-2 ml-6;
   }
 
   ul li {
@@ -99,7 +99,7 @@
   }
 
   p code {
-    @apply bg-[#24292e] inline-block rounded-sm text-sm md:text-base px-1;
+    @apply bg-[#24292e] inline-block rounded-sm text-sm md:text-base px-2 py-0 text-pink-400;
   }
 
   blockquote {

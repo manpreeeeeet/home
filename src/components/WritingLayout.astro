@@ -9,9 +9,11 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="bg-frieren bg-no-repeat bg-cover bg-fixed bg-center">
   <Header title={title} />
-  <body class="bg-background font-mono">
+  <body
+    class="font-mono min-h-screen backdrop-blur-[5px] bg-background/85 tracking-wide"
+  >
     <Analytics />
     <div
       class="container mx-auto my-0 lg:max-w-[850px] text-zinc-50 p-5 text-sm md:text-base"
@@ -19,7 +21,7 @@ const { title } = Astro.props;
       <a
         href="/"
         class="hover:cursor-pointer hover:bg-slate-800 text-blue-500 py-2"
-        >[ home ]</a
+        >[ Home ]</a
       >
       <slot />
       <div class="my-10"></div>

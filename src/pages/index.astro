@@ -6,23 +6,20 @@ import Analytics from "@vercel/analytics/astro";
 import { Image } from "astro:assets";
 import frieren from "../../public/frieren.png";
 const posts = await getCollection("writings");
-
-import landingPageOG from "../assets/images/landing-page.png";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="bg-frieren bg-no-repeat bg-cover bg-fixed bg-center" }>
   <Header
-    title="mnprt"
-    image={landingPageOG}
+    title="mnprt's site"
     description="hey! i am manpreet. i love the kotlin."
   />
-  <body class="bg-background font-sans">
+  <body class="font-sans min-h-screen backdrop-blur-[5px] bg-background/85">
     <Analytics />
     <div
-      class="container mx-auto my-0 lg:max-w-screen-md text-zinc-50 p-5 text-sm md:text-base"
+      class="container mx-auto lg:max-w-screen-md text-zinc-50 text-sm md:text-base p-5 tracking-wide"
     >
-      <div class="flex gap-10 mt-20 items-start">
+      <div class="flex gap-10 pt-20 items-start">
         <Image
           class="w-full max-w-[200px] md:max-w-[400px] h-auto object-contain"
           alt="frieren standing in garden of flowers"
@@ -36,23 +33,37 @@ import landingPageOG from "../assets/images/landing-page.png";
               <a
                 href="https://github.com/manpreeeeeet"
                 target="_blank"
-                class="hover:cursor-pointer hover:bg-slate-800 text-blue-500 py-2"
+                class="hover:cursor-pointer hover:bg-blue-400 text-blue-500 py-2"
                 >[ <span class="underline">github</span> ]
               </a>
             </li>
           </ul>
         </div>
       </div>
-      <div class="h-1 w-full my-4 bg-slate-800"></div>
-      <div class="flex flex-col gap-4">
-        <p>hey! i am manpreet. i love the kotlin.</p>
+      <div class="flex flex-col gap-2 py-4">
+        <h1 class="text-sm md:text-xl py-4 text-peacock">## About</h1>
         <p>
-          i am in my final year studying computer science @ university in 🇨🇦
+          Hey! I'm <span class="px-2 bg-slate-800 text-pink-400">manpreet</span
+          >.
+        </p>
+        <p>
+          I enjoy writing <span class="px-2 bg-slate-800 text-pink-400"
+            >Kotlin</span
+          >, learning new technologies and reading <a
+            href="https://news.ycombinator.com/"
+            class="hover:cursor-pointer hover:bg-blue-400/30 text-blue-500"
+            >[ hackernews ]</a
+          > articles.
+        </p>
+        <p>
+          I am studying <span class="px-2 bg-slate-800 text-pink-400"
+            >Computer Science</span
+          > at <span class="text-fadegreen">University of Alberta</span>. I am
+          currently interested in information retrieval and distributed systems.
         </p>
       </div>
-      <div class="h-1 w-full my-4 bg-slate-800"></div>
       <div>
-        <h1 class="text-sm md:text-xl pb-4">posts</h1>
+        <h1 class="text-sm md:text-xl py-4 text-peacock">## Posts</h1>
         <ul class="flex flex-col gap-2">
           {
             posts.map((post) => (
@@ -68,14 +79,17 @@ import landingPageOG from "../assets/images/landing-page.png";
           }
         </ul>
       </div>
-      <div class="h-1 w-full my-4 bg-slate-800"></div>
-      <div>
-        <h1 class="text-sm md:text-xl pb-4">contact</h1>
+      <div class="flex flex-col gap-2">
+        <h1 class="text-sm md:text-xl py-4 text-peacock">## Contact</h1>
+        <p class="pb-2">
+          I go by <span class="px-2 bg-slate-800 text-pink-400">mnprt</span> online.
+          Contact me via:
+        </p>
         <ul class="flex flex-col gap-2">
           <li>
             <a
               href="mailto:manpreetrahal27@gmail.com"
-              class="hover:cursor-pointer hover:bg-slate-800 text-blue-500"
+              class="hover:cursor-pointer hover:bg-blue-400/30 text-blue-500"
             >
               [ email: <span class="underline">mnprt@mnprt.me</span> ]
             </a>
@@ -83,7 +97,7 @@ import landingPageOG from "../assets/images/landing-page.png";
           <li>
             <a
               href="https://bsky.app/profile/mnprt.me"
-              class="hover:cursor-pointer hover:bg-slate-800 text-blue-500"
+              class="hover:cursor-pointer hover:bg-blue-400/30 text-blue-500"
             >
               [ bsky: <span class="underline">mnprt.me</span> ]
             </a>
