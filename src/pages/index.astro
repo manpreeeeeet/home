@@ -40,8 +40,8 @@ const posts = await getCollection("writings");
           </ul>
         </div>
       </div>
-      <div class="flex flex-col gap-2 py-4">
-        <h1 class="text-sm md:text-xl py-4 text-peacock">## About</h1>
+      <div class="flex flex-col gap-2 pt-5">
+        <h1 class="text-sm md:text-xl pb-2 text-peacock">## About</h1>
         <p>
           Hey! I'm <span class="px-2 bg-slate-800 text-pink-400">manpreet</span
           >.
@@ -62,8 +62,8 @@ const posts = await getCollection("writings");
           currently interested in information retrieval and distributed systems.
         </p>
       </div>
-      <div>
-        <h1 class="text-sm md:text-xl py-4 text-peacock">## Posts</h1>
+      <div class="pt-5">
+        <h1 class="text-sm md:text-xl pb-2 text-peacock">## Posts</h1>
         <ul class="flex flex-col gap-2">
           {
             posts.map((post) => (
@@ -79,14 +79,14 @@ const posts = await getCollection("writings");
           }
         </ul>
       </div>
-      <div class="flex flex-col gap-2">
-        <h1 class="text-sm md:text-xl py-4 text-peacock">## Contact</h1>
+      <div class="flex flex-col gap-2 pt-5">
+        <h1 class="text-sm md:text-xl pb-2 text-peacock">## Contact</h1>
         <p class="pb-2">
           I go by <span class="px-2 bg-slate-800 text-pink-400">mnprt</span> online.
           Contact me via:
         </p>
         <ul class="flex flex-col gap-2">
-          <li>
+          <li class="list-disc ml-4">
             <a
               href="mailto:manpreetrahal27@gmail.com"
               class="hover:cursor-pointer hover:bg-blue-400/30 text-blue-500"
@@ -94,7 +94,7 @@ const posts = await getCollection("writings");
               [ email: <span class="underline">mnprt@mnprt.me</span> ]
             </a>
           </li>
-          <li>
+          <li class="list-disc ml-4">
             <a
               href="https://bsky.app/profile/mnprt.me"
               class="hover:cursor-pointer hover:bg-blue-400/30 text-blue-500"
@@ -102,7 +102,7 @@ const posts = await getCollection("writings");
               [ bsky: <span class="underline">mnprt.me</span> ]
             </a>
           </li>
-          <li>[ discord: manpreeeeeet ]</li>
+          <li class="list-disc ml-4">[ discord: manpreeeeeet ]</li>
         </ul>
       </div>
     </div>
