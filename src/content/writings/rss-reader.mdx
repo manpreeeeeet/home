@@ -1,3 +1,39 @@
+---
+title: rss-reader
+---
+
+
+# \# Creating my own rss reader page
+<div class="h-1 w-full my-4 bg-slate-800"></div>
+
+## \#\# Problem
+I like reading blogs but I don't enjoy using `rss readers` or having a separate app. I mostly find new blog posts from social media or hackernews.
+This means I might miss out on posts from blogs I like. So I have built my own chronological feed by consuming `rss` feed of my favorite blogs. You can find it
+[here](/blogs).
+
+## \#\# How does it work?
+I wrote a simple python script that builds a `json` output that I use to statically generate my feed-page. This does mean I have to manually run this script
+whenever I want to update my feed. I plan to create a github action to build a new feed on a weekly basis for me.
+
+
+## \#\# Script
+The script requires you install the following packages:
+```
+click==8.1.7
+feedparser==6.0.11
+joblib==1.4.2
+langdetect==1.0.9
+nltk==3.9.1
+python-dateutil==2.9.0.post0
+regex==2024.11.6
+sgmllib3k==1.0.0
+six==1.16.0
+tqdm==4.67.1
+```
+<br/>
+
+Script:
+```py
 import feedparser
 import json
 from typing import  *
@@ -96,3 +132,4 @@ def combine_feeds(feed_urls: List[str]):
 
 if __name__ == "__main__":
     combine_feeds(["https://notes.eatonphil.com/rss.xml", "https://artem.krylysov.com/atom.xml"])
+```
