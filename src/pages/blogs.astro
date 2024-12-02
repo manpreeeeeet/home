@@ -47,10 +47,7 @@ const feedItems = feed["items"];
                   </div>
                   <p>{feedItem.description}</p>
                   <div class="text-sm mt-2 text-slate-700">
-                    {format(
-                      new Date(feedItem.published_date),
-                      "MMMM d, yyyy - h:mm a",
-                    )}
+                    {format(new Date(feedItem.published_date), "MMMM d, yyyy")}
                   </div>
                 </article>
               </a>
