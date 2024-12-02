@@ -4,13 +4,14 @@ import Header from "./Header.astro";
 import Analytics from "@vercel/analytics/astro";
 export interface Props {
   title?: string;
+  description?: string;
 }
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" class="bg-frieren bg-no-repeat bg-cover bg-fixed bg-center">
-  <Header title={title} />
+  <Header title={title} description={description} />
   <body
     class="font-mono min-h-screen md:backdrop-blur-[5px] bg-background/85 tracking-wide"
   >
