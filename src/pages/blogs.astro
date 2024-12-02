@@ -1,0 +1,63 @@
+---
+import Header from "../components/Header.astro";
+import feed from "../../scripts/feed_output.json";
+import { format } from "date-fns";
+import "../styles/global.css";
+const feedItems = feed["items"];
+---
+
+<!doctype html>
+<html lang="en" class="bg-frieren bg-no-repeat bg-cover bg-fixed bg-center" }>
+  <Header
+    title="fav blogs"
+    description="hey! i am manpreet. i love the kotlin."
+  />
+  <body class="font-sans min-h-screen md:backdrop-blur-[5px] bg-background/85">
+    <div
+      class="container mx-auto lg:max-w-screen-md text-zinc-50 text-sm md:text-base p-5 pb-10 tracking-wide"
+    >
+      <a
+        href="/"
+        class="hover:cursor-pointer hover:bg-slate-800 text-blue-500 py-2"
+        >[ Home ]</a
+      >
+      <div>
+        <h1
+          class="text-xl md:text-3xl py-2 font-bold mt-4 md:mt-8 leading-3 text-peacock"
+        >
+          # Feed from my fav blogs
+        </h1>
+        <p class="">
+          <span class="px-2 bg-slate-800 text-pink-400">Rss</span> feed of the blogs
+          I like, sorted by published-date.
+        </p>
+      </div>
+      <div class="h-1 w-full my-4 bg-slate-800"></div>
+      <div class="flex flex-col gap-4">
+        {
+          feedItems.map((feedItem) => {
+            return (
+              <a href={feedItem.link} target="_blank" class="group">
+                <article class="">
+                  <h3 class="text-base md:text-xl text-peacock my-2 underline decoration-slate-800 underline-offset-4">
+                    ### {feedItem.title}
+                  </h3>
+                  <div class="text-blue-500 group-visited:text-purple-900">
+                    {feedItem.link}
+                  </div>
+                  <p>{feedItem.description}</p>
+                  <div class="text-sm mt-2 text-slate-700">
+                    {format(
+                      new Date(feedItem.published_date),
+                      "MMMM d, yyyy - h:mm a",
+                    )}
+                  </div>
+                </article>
+              </a>
+            );
+          })
+        }
+      </div>
+    </div>
+  </body>
+</html>

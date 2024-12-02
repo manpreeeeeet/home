@@ -1,0 +1,1090 @@
+{
+  "total_items": 155,
+  "items": [
+    {
+      "title": "1 million page views",
+      "link": "http://notes.eatonphil.com/2024-11-28-1-million-views.html",
+      "published_date": "Thu, 28 Nov 2024 00:00:00 +0000",
+      "author": "",
+      "description": "I was delighted to notice this morning that this site has recently passed 1M page views. And since Murat wrote about his 1M page view accomplishment at the time, I felt compelled to now too. I started..."
+    },
+    {
+      "title": "Active and influential NYC infrastructure people",
+      "link": "http://notes.eatonphil.com/2024-11-15-active-nyc-infrastructure-people.html",
+      "published_date": "Fri, 15 Nov 2024 00:00:00 +0000",
+      "author": "",
+      "description": "These are some of the most influential (mostly due to experience or expertise) and active folks (I actually see them attend events) in the NYC infrastructure scene (that I have a personal connection t..."
+    },
+    {
+      "title": "Exploring Postgres's arena allocator by writing an HTTP server from scratch",
+      "link": "http://notes.eatonphil.com/2024-11-06-exploring-postgress-arena-allocator-writing-http-server-scratch.html",
+      "published_date": "Wed, 06 Nov 2024 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Effective unemployment and social media",
+      "link": "http://notes.eatonphil.com/2024-11-05-effective-unemployment-and-social-media.html",
+      "published_date": "Tue, 05 Nov 2024 00:00:00 +0000",
+      "author": "",
+      "description": "Being unemployed can be incredibly depressing. So much rejection. Everything seems to be out of your control. Everything except for one thing: what you produce. You might know that repeatedly posting ..."
+    },
+    {
+      "title": "Checking linearizability in Go",
+      "link": "http://notes.eatonphil.com/2024-10-31-checking-linearizability-in-go.html",
+      "published_date": "Thu, 31 Oct 2024 00:00:00 +0000",
+      "author": "",
+      "description": "You want to check for strict consistency ( linearizability ) for your project but you don't want to have to deal with the JVM . Porcupine , used by a number of real-world systems like etcd and TiDB, h..."
+    },
+    {
+      "title": "Build a serverless ACID database with this one neat trick (atomic PutIfAbsent)",
+      "link": "http://notes.eatonphil.com/2024-09-29-build-a-serverless-acid-database-with-this-one-neat-trick.html",
+      "published_date": "Sun, 29 Sep 2024 00:00:00 +0000",
+      "author": "",
+      "description": "Delta Lake is an open protocol for serverless ACID databases. Due to its simplicity, scalability, and the number of open-source implementations, it's quickly becoming the DuckDB of serverless transact..."
+    },
+    {
+      "title": "Be someone who does things",
+      "link": "http://notes.eatonphil.com/2024-09-23-be-someone-who-does-things.html",
+      "published_date": "Mon, 23 Sep 2024 00:00:00 +0000",
+      "author": "",
+      "description": "I wrote last month that what you want to do is one of the most useful motivations in life. I want to follow that up by saying that the only thing more important than wanting to do something is to actu..."
+    },
+    {
+      "title": "Obsession",
+      "link": "http://notes.eatonphil.com/2024-08-24-obsession.html",
+      "published_date": "Sat, 24 Aug 2024 00:00:00 +0000",
+      "author": "",
+      "description": "In your professional and personal life, I don't believe there is a stronger motivation than having something in mind and the desire to do it. Yet the natural way to deal with a desire to do something ..."
+    },
+    {
+      "title": "What's the big deal about Deterministic Simulation Testing?",
+      "link": "http://notes.eatonphil.com/2024-08-20-deterministic-simulation-testing.html",
+      "published_date": "Tue, 20 Aug 2024 00:00:00 +0000",
+      "author": "",
+      "description": "Bugs in distributed systems are hard to find, largely because systems interact in chaotic ways. And even once you've found a bug, it can be anywhere from simple to impossible to reproduce it. It's abo..."
+    },
+    {
+      "title": "Delightful, production-grade replication for Postgres",
+      "link": "http://notes.eatonphil.com/2024-07-30-delightful-production-grade-replication-postgres.html",
+      "published_date": "Tue, 30 Jul 2024 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "A reawakening of systems programming meetups",
+      "link": "http://notes.eatonphil.com/2024-07-07-systems-meetups.html",
+      "published_date": "Sun, 07 Jul 2024 00:00:00 +0000",
+      "author": "",
+      "description": "This year has seen a resurgence in really high quality systems programming meetups. Munich Database Meetup , Berlin Systems Group , SF Distributed Systems Meetup , NYC Systems , Bengaluru Systems , to..."
+    },
+    {
+      "title": "A write-ahead log is not a universal part of durability",
+      "link": "http://notes.eatonphil.com/2024-07-01-a-write-ahead-log-is-not-a-universal-part-of-durability.html",
+      "published_date": "Mon, 01 Jul 2024 00:00:00 +0000",
+      "author": "",
+      "description": "A database does not need a write-ahead log (WAL) to achieve durability. A database can write its long-term data structure durably to disk before returning to a client. Granted, this is a bad idea! And..."
+    },
+    {
+      "title": "Timeseries Indexing at Scale",
+      "link": "https://artem.krylysov.com/blog/2024/06/28/timeseries-indexing-at-scale/",
+      "published_date": "2024-06-28T00:00:00Z",
+      "author": "",
+      "description": "Note This blog post was co-authored with May Lee and is cross-posted on the Datadog blog . Datadog collects billions of events from millions of hosts every minute and that number keeps growing and fas..."
+    },
+    {
+      "title": "The limitations of LLMs, or why are we doing RAG?",
+      "link": "http://notes.eatonphil.com/2024-06-17-limitations-llm-or-why-are-we-doing-rag.html",
+      "published_date": "Mon, 17 Jun 2024 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Confusion is a muse",
+      "link": "http://notes.eatonphil.com/2024-06-14-confusion-is-a-muse.html",
+      "published_date": "Fri, 14 Jun 2024 00:00:00 +0000",
+      "author": "",
+      "description": "Some of the most interesting technical blog posts I read come from, and a common reason for posts I write is, confusion. You're at work and you start asking questions that are difficult to answer. You..."
+    },
+    {
+      "title": "How I run a software book club",
+      "link": "http://notes.eatonphil.com/2024-05-30-how-i-run-book-clubs.html",
+      "published_date": "Thu, 30 May 2024 00:00:00 +0000",
+      "author": "",
+      "description": "I've been running software book clubs almost continuously since last summer, about 12 months ago. We read through Designing Data-Intensive Applications , Database Internals , Systems Performance , and..."
+    },
+    {
+      "title": "Implementing MVCC and major SQL transaction isolation levels",
+      "link": "http://notes.eatonphil.com/2024-05-16-mvcc.html",
+      "published_date": "Thu, 16 May 2024 00:00:00 +0000",
+      "author": "",
+      "description": "In this post we'll build a database in 400 lines of code with basic support for five standard SQL transaction levels: Read Uncommitted, Read Committed, Repeatable Read, Snapshot Isolation and Serializ..."
+    },
+    {
+      "title": "What makes a great technical blog",
+      "link": "http://notes.eatonphil.com/2024-04-10-what-makes-a-great-tech-blog.html",
+      "published_date": "Wed, 10 Apr 2024 00:00:00 +0000",
+      "author": "",
+      "description": "I want to explain why the blogs in My favorite technical blogs are my favorite. That page is solely about non-corporate tech blogs. So this post is too. I'll have to make another list for favorite cor..."
+    },
+    {
+      "title": "A paper reading club at work; databases and distributed systems research",
+      "link": "http://notes.eatonphil.com/2024-04-05-company-paper-club.html",
+      "published_date": "Fri, 05 Apr 2024 00:00:00 +0000",
+      "author": "",
+      "description": "I started a paper reading club this week at work, focused on databases and distributed systems research. I posted in a general channel about the premise and asked if anyone was interested. I clarified..."
+    },
+    {
+      "title": "Finding memory leaks in Postgres C code",
+      "link": "http://notes.eatonphil.com/2024-03-27-finding-memory-leaks-in-postgres-c-code.html",
+      "published_date": "Wed, 27 Mar 2024 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Zig, Rust, and other languages",
+      "link": "http://notes.eatonphil.com/2024-03-15-zig-rust-and-other-languages.html",
+      "published_date": "Fri, 15 Mar 2024 00:00:00 +0000",
+      "author": "",
+      "description": "Having worked a bit in Zig, Rust, Go and now C, I think there are a few common topics worth having a fresh conversation on: automatic memory management, the standard library, and explicit allocation. ..."
+    },
+    {
+      "title": "First month on a database team",
+      "link": "http://notes.eatonphil.com/2024-03-11-first-month-on-a-database-team.html",
+      "published_date": "Mon, 11 Mar 2024 00:00:00 +0000",
+      "author": "",
+      "description": "A little over a month ago, I joined EnterpriseDB on a distributed Postgres product ( PGD ). The process of onboarding myself has been pretty similar at each company in the last decade, though I think ..."
+    },
+    {
+      "title": "An intuition for distributed consensus in OLTP systems",
+      "link": "http://notes.eatonphil.com/2024-02-08-an-intuition-for-distributed-consensus-in-oltp-systems.html",
+      "published_date": "Thu, 08 Feb 2024 00:00:00 +0000",
+      "author": "",
+      "description": "Distributed consensus in transactional databases (e.g. etcd or Cockroach) is a big deal these days. Most often under the hood are variations of log-based Paxos-like algorithms such as MultiPaxos, View..."
+    },
+    {
+      "title": "Writing a minimal in-memory storage engine for MySQL/MariaDB",
+      "link": "http://notes.eatonphil.com/2024-01-09-minimal-in-memory-storage-engine-for-mysql.html",
+      "published_date": "Tue, 09 Jan 2024 00:00:00 +0000",
+      "author": "",
+      "description": "I spent a week looking at MySQL/MariaDB internals along with ~80 other devs. Although MySQL and MariaDB are mostly the same (more on that later), I focused on MariaDB specifically this week. Before la..."
+    },
+    {
+      "title": "Make your own way",
+      "link": "http://notes.eatonphil.com/2023-12-26-make-your-own-way.html",
+      "published_date": "Wed, 27 Dec 2023 00:00:00 +0000",
+      "author": "",
+      "description": "Over the years, I have repeatedly felt like I missed the timing for a meetup or an IRC group or social media in general. I'd go to a meetup every so often but I'd never make a meaningful connection wi..."
+    },
+    {
+      "title": "Exploring a Postgres query plan",
+      "link": "http://notes.eatonphil.com/2023-11-19-exploring-a-postgres-query-plan.html",
+      "published_date": "Sun, 19 Nov 2023 00:00:00 +0000",
+      "author": "",
+      "description": "I learned this week that you can intercept and redirect Postgres query execution. You can hook into the execution layer so you're given a query plan and you get to decide what to do with it. What rows..."
+    },
+    {
+      "title": "Writing a storage engine for Postgres: an in-memory Table Access Method",
+      "link": "http://notes.eatonphil.com/2023-11-01-postgres-table-access-methods.html",
+      "published_date": "Wed, 01 Nov 2023 00:00:00 +0000",
+      "author": "",
+      "description": "With Postgres 12 , released in 2019, it became possible to swap out Postgres's storage engine . This is a feature MySQL has supported for a long time. There are at least 8 different built-in engines y..."
+    },
+    {
+      "title": "io_uring basics: Writing a file to disk",
+      "link": "http://notes.eatonphil.com/2023-10-19-write-file-to-disk-with-io_uring.html",
+      "published_date": "Thu, 19 Oct 2023 00:00:00 +0000",
+      "author": "",
+      "description": "King and I wrote a blog post about building an event-driven cross-platform IO library that used io_uring on Linux. We sketched out how it works at a high level but I hadn't yet internalized how you ac..."
+    },
+    {
+      "title": "Go database driver overhead on insert-heavy workloads",
+      "link": "http://notes.eatonphil.com/2023-10-05-go-database-sql-overhead-on-insert-heavy-workloads.html",
+      "published_date": "Thu, 05 Oct 2023 00:00:00 +0000",
+      "author": "",
+      "description": "The most popular SQLite and PostgreSQL database drivers in Go are (roughly) 20-76% slower than alternative Go drivers on insert-heavy benchmarks of mine. So if you are bulk-inserting data with Go (and..."
+    },
+    {
+      "title": "Intercepting and modifying Linux system calls with ptrace",
+      "link": "http://notes.eatonphil.com/2023-10-01-intercepting-and-modifying-linux-system-calls-with-ptrace.html",
+      "published_date": "Sun, 01 Oct 2023 00:00:00 +0000",
+      "author": "",
+      "description": "How software fails is interesting. But real-world errors can be infrequent to manifest. Fault injection is a formal-sounding term that just means: trying to explicitly trigger errors in the hopes of d..."
+    },
+    {
+      "title": "How do databases execute expressions?",
+      "link": "http://notes.eatonphil.com/2023-09-21-how-do-databases-execute-expressions.html",
+      "published_date": "Thu, 21 Sep 2023 00:00:00 +0000",
+      "author": "",
+      "description": "Databases are fun. They sit at the confluence of Computer Science topics that might otherwise not seem practical in life as a developer. For example, every database with a query language is also a pro..."
+    },
+    {
+      "title": "Eight years of organizing tech meetups",
+      "link": "http://notes.eatonphil.com/eight-years-of-tech-meetups.html",
+      "published_date": "Mon, 04 Sep 2023 00:00:00 +0000",
+      "author": "",
+      "description": "This is a collection of random personal experiences. So if you don't want to read everything, feel free to skip to the end for takeaways. I write because I'd like to see more high-quality meetups. And..."
+    },
+    {
+      "title": "Thinking about functional programming",
+      "link": "http://notes.eatonphil.com/2023-08-15-thinking-about-functional-programming.html",
+      "published_date": "Tue, 15 Aug 2023 00:00:00 +0000",
+      "author": "",
+      "description": "Someone on Discord asked about how to learn functional programming. The question and my initial tweet on the subject prompted an interesting discussion with Shriram Krishnamurthi and other folks. So h..."
+    },
+    {
+      "title": "We put a distributed database in the browser – and made a game of it",
+      "link": "http://notes.eatonphil.com/2023-07-11-we-put-a-distributed-database-in-the-browse.html",
+      "published_date": "Tue, 11 Jul 2023 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Metaprogramming in Zig and parsing CSS",
+      "link": "http://notes.eatonphil.com/2023-06-19-metaprogramming-in-zig-and-parsing-css.html",
+      "published_date": "Mon, 19 Jun 2023 00:00:00 +0000",
+      "author": "",
+      "description": "I knew Zig supported some sort of reflection on types. But I had been confused about how to use it. What's the difference between @typeInfo and @TypeOf ? I ignored this aspect of Zig until a problem c..."
+    },
+    {
+      "title": "Implementing the Raft distributed consensus protocol in Go",
+      "link": "http://notes.eatonphil.com/2023-05-25-raft.html",
+      "published_date": "Thu, 25 May 2023 00:00:00 +0000",
+      "author": "",
+      "description": "As part of bringing myself up-to-speed after joining TigerBeetle , I wanted some background on how distributed consensus and replicated state machines protocols work. TigerBeetle uses Viewstamped Repl..."
+    },
+    {
+      "title": "Two books I recommend to developers",
+      "link": "http://notes.eatonphil.com/books-developers-should-read.html",
+      "published_date": "Tue, 16 May 2023 00:00:00 +0000",
+      "author": "",
+      "description": "Originally published on February 1, 2021. The original version included two books I don't think are actually so worthwhile. This list is down to two. I think that's a good thing actually. These are th..."
+    },
+    {
+      "title": "My favorite software subreddits",
+      "link": "http://notes.eatonphil.com/high-quality-subreddits-you-should-be-following.html",
+      "published_date": "Tue, 16 May 2023 00:00:00 +0000",
+      "author": "",
+      "description": "Originally published on December 5, 2021. If you are an experienced software developer whose only exposure to reddit is dank memes, proggit or even language-specific subreddits like /r/python , you're..."
+    },
+    {
+      "title": "How RocksDB works",
+      "link": "https://artem.krylysov.com/blog/2023/04/19/how-rocksdb-works/",
+      "published_date": "2023-04-19T00:00:00Z",
+      "author": "",
+      "description": "Introduction # Over the past years, the adoption of RocksDB increased dramatically. It became a standard for embeddable key-value stores. Today RocksDB runs in production at Meta, Microsoft , Netflix ..."
+    },
+    {
+      "title": "Errors and Zig",
+      "link": "http://notes.eatonphil.com/errors-and-zig.html",
+      "published_date": "Tue, 21 Mar 2023 00:00:00 +0000",
+      "author": "",
+      "description": "At TigerBeetle these last few weeks I've been doing a mix of documenting client libraries, writing sample code for client libraries, and writing integration tests against the sample code. The client l..."
+    },
+    {
+      "title": "Notes from Neal Gabler's Walt Disney",
+      "link": "http://notes.eatonphil.com/2023-02-18-neal-gabler-walt-disney-notes.html",
+      "published_date": "Sat, 18 Feb 2023 00:00:00 +0000",
+      "author": "",
+      "description": "Disney was a celebrity by his mid-30s, Disney the company was famous by 1930s. Even though politically the 1930s was considered the decade of Roosevelt (elected President in 1933), culturally the 1930..."
+    },
+    {
+      "title": "Lessons learned streaming building a Scheme-like interpreter in Go",
+      "link": "http://notes.eatonphil.com/2023-01-30-livescheme.html",
+      "published_date": "Mon, 30 Jan 2023 00:00:00 +0000",
+      "author": "",
+      "description": "I wanted to practice making coding videos so I did a four-part series on writing a basic Scheme-like language (minus macros and arrays and tons of stuff). I picked this simple topic because I wanted a..."
+    },
+    {
+      "title": "An effective product manager",
+      "link": "http://notes.eatonphil.com/effective-product-manager.html",
+      "published_date": "Mon, 23 Jan 2023 00:00:00 +0000",
+      "author": "",
+      "description": "There are three specific activities I have loved in some product managers I've worked with (and missed in others). tldr; Talk with customers and prospects Develop and share a vision Evangelize Talk wi..."
+    },
+    {
+      "title": "The year in books: 2022",
+      "link": "http://notes.eatonphil.com/2023-01-12-year-in-books.html",
+      "published_date": "Thu, 12 Jan 2023 00:00:00 +0000",
+      "author": "",
+      "description": "In 2022 I finished 20 books spanning 15,801 pages. 3 more than I read in 2021, but about twice the number of pages. 3 fiction and 17 non-fiction. Another ~30 started but not finished. I had a hard tim..."
+    },
+    {
+      "title": "Favorite compiler and interpreter resources",
+      "link": "http://notes.eatonphil.com/2023-01-04-compiler-resources.html",
+      "published_date": "Thu, 05 Jan 2023 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "General book recommendations",
+      "link": "http://notes.eatonphil.com/2023-01-04-book-recommendations.html",
+      "published_date": "Wed, 04 Jan 2023 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "In response to a frontend developer asking about database development",
+      "link": "http://notes.eatonphil.com/2023-01-01-letter-to-a-frontend-developer-asking-about-database-development.html",
+      "published_date": "Sun, 01 Jan 2023 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Is it worth writing about?",
+      "link": "http://notes.eatonphil.com/is-it-worth-writing-about.html",
+      "published_date": "Thu, 01 Dec 2022 00:00:00 +0000",
+      "author": "",
+      "description": "You acquire a skill or experience through time and effort, then downplay the impact of writing and sharing the learning process. Professionals seem naturally to imagine a high bar for what is worth wr..."
+    },
+    {
+      "title": "A Programmer-Friendly I/O Abstraction Over io_uring and kqueue",
+      "link": "http://notes.eatonphil.com/a-friendly-abstraction-over-iouring-and-kqueue.html",
+      "published_date": "Wed, 23 Nov 2022 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Writing a SQL database, take two: Zig and RocksDB",
+      "link": "http://notes.eatonphil.com/zigrocks-sql.html",
+      "published_date": "Sun, 13 Nov 2022 00:00:00 +0000",
+      "author": "",
+      "description": "For my second project while learning Zig, I decided to port an old, minimal SQL database project from Go to Zig. In this post, in ~1700 lines of code (yes, I'm sorry it's bigger than my usual), we'll ..."
+    },
+    {
+      "title": "A minimal RocksDB example with Zig",
+      "link": "http://notes.eatonphil.com/zigrocks.html",
+      "published_date": "Sun, 30 Oct 2022 00:00:00 +0000",
+      "author": "",
+      "description": "I mostly programmed in Go the last few years. So every time I wanted an embedded key-value database, I reached for Cockroach's Pebble . Pebble is great for Go programming but Go does not embed well in..."
+    },
+    {
+      "title": "A database without dynamic memory allocation",
+      "link": "http://notes.eatonphil.com/a-database-without-dynamic-memory.html",
+      "published_date": "Wed, 12 Oct 2022 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "A minimal distributed key-value database with Hashicorp's Raft library",
+      "link": "http://notes.eatonphil.com/minimal-key-value-store-with-hashicorp-raft.html",
+      "published_date": "Sat, 17 Sep 2022 00:00:00 +0000",
+      "author": "",
+      "description": "When I wrote the \" build a distributed PostgreSQL proof of concept \" post I first had to figure out how to use Hashicorp's Raft implementation . There weren't any examples I could find in the Hashicor..."
+    },
+    {
+      "title": "What's the big deal about key-value databases like FoundationDB and RocksDB?",
+      "link": "http://notes.eatonphil.com/whats-the-big-deal-about-key-value-databases.html",
+      "published_date": "Tue, 23 Aug 2022 00:00:00 +0000",
+      "author": "",
+      "description": "Let's assume you're familiar with basic SQL databases like PostgreSQL and MySQL, and document databases like MongoDB and Elasticsearch. You probably know Redis too. But you're hearing more and more ab..."
+    },
+    {
+      "title": "SQLite has pretty limited builtin functions",
+      "link": "http://notes.eatonphil.com/2022-08-21-sqlite-limited-builtin-functions.html",
+      "published_date": "Sun, 21 Aug 2022 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Container scheduling strategies for integration testing 14 different databases in Github Actions",
+      "link": "http://notes.eatonphil.com/2022-07-25-database-integration-testing.html",
+      "published_date": "Mon, 25 Jul 2022 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Implementing a simple jq clone in Go, and basics of Go memory profiling",
+      "link": "http://notes.eatonphil.com/implementing-a-jq-clone-in-go.html",
+      "published_date": "Sun, 10 Jul 2022 00:00:00 +0000",
+      "author": "",
+      "description": "In this post we'll build a basic jq clone in Go. It will only be able to pull a single path out of each object it reads. It won't be able to do filters, mapping, etc. $ cat large-file.json | head -n2 ..."
+    },
+    {
+      "title": "One year as a solo dev building open-source data tools without funding",
+      "link": "http://notes.eatonphil.com/2022-06-11-year-in-review.html",
+      "published_date": "Fri, 10 Jun 2022 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Let's build a distributed Postgres proof of concept",
+      "link": "http://notes.eatonphil.com/distributed-postgres.html",
+      "published_date": "Tue, 17 May 2022 00:00:00 +0000",
+      "author": "",
+      "description": "What is CockroachDB under the hood? Take a look at its go.mod and notice a number of dependencies that do a lot of work: a PostgreSQL wire protocol implementation , a storage layer , a Raft implementa..."
+    },
+    {
+      "title": "SQLite in Go, with and without cgo",
+      "link": "http://notes.eatonphil.com/sqlite-in-go-with-and-without-cgo.html",
+      "published_date": "Thu, 12 May 2022 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "HTML event handler attributes: down the rabbit hole",
+      "link": "http://notes.eatonphil.com/event-handler-attributes.html",
+      "published_date": "Tue, 26 Apr 2022 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Interview With Phil of DataStation",
+      "link": "http://notes.eatonphil.com/console-101.html",
+      "published_date": "Sun, 17 Apr 2022 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external interview. Click here if you are not redirected."
+    },
+    {
+      "title": "Surveying SQL parser libraries in a few high-level languages",
+      "link": "http://notes.eatonphil.com/sql-parsers.html",
+      "published_date": "Mon, 11 Apr 2022 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Writing a document database from scratch in Go: Lucene-like filters and indexes",
+      "link": "http://notes.eatonphil.com/documentdb.html",
+      "published_date": "Mon, 28 Mar 2022 00:00:00 +0000",
+      "author": "",
+      "description": "In this post we'll write a rudimentary document database from scratch in Go. In less than 500 lines of code we'll be able to support the following interactions, inspired by Elasticsearch: $ curl -X PO..."
+    },
+    {
+      "title": "Speeding up Go's builtin JSON encoder up to 55% for large arrays of objects",
+      "link": "http://notes.eatonphil.com/improving-go-json-encoding-performance-for-large-arrays-of-objects.html",
+      "published_date": "Thu, 03 Mar 2022 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "SMTP protocol basics from scratch in Go: receiving email from Gmail",
+      "link": "http://notes.eatonphil.com/handling-email-from-gmail-smtp-protocol-basics.html",
+      "published_date": "Sun, 20 Feb 2022 00:00:00 +0000",
+      "author": "",
+      "description": "I've never run my own mail server before. Before today I had no clue how email worked under the hood other than the very few times I've set up mail clients. I've heard no few times how hard it is to s..."
+    },
+    {
+      "title": "The world of PostgreSQL wire compatibility",
+      "link": "http://notes.eatonphil.com/the-world-of-postgresql-wire-compatibility.html",
+      "published_date": "Tue, 08 Feb 2022 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "How to recommend books, or, stop recommending SICP",
+      "link": "http://notes.eatonphil.com/recommending-a-book.html",
+      "published_date": "Mon, 31 Jan 2022 00:00:00 +0000",
+      "author": "",
+      "description": "Many \"must-read\" books are not well-written. I try to read a lot , but I still have a low tolerance for bad writing and bad editing. I write this post both to discourage thoughtless recommendations an..."
+    },
+    {
+      "title": "Bootloader basics",
+      "link": "http://notes.eatonphil.com/bootloader-basics.html",
+      "published_date": "Sun, 23 Jan 2022 00:00:00 +0000",
+      "author": "",
+      "description": "I spent a few days playing around with bootloaders for the first time. This post builds up to a text editor with a few keyboard shortcuts. I'll be giving a virtual talk based on this work at Hacker Ni..."
+    },
+    {
+      "title": "dsq: Commandline tool for running SQL queries against JSON, CSV, Excel, Parquet, and more.",
+      "link": "http://notes.eatonphil.com/dsq.html",
+      "published_date": "Tue, 11 Jan 2022 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Analyzing large JSON files via partial JSON parsing",
+      "link": "http://notes.eatonphil.com/analyzing-large-json-files-via-partial-json-parsing.html",
+      "published_date": "Thu, 06 Jan 2022 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "The year in books: 11 to recommend in 2021",
+      "link": "http://notes.eatonphil.com/year-in-books-2021.html",
+      "published_date": "Wed, 05 Jan 2022 00:00:00 +0000",
+      "author": "",
+      "description": "Last year (2021) I finished 17 books, a five year low. But that's ok! 4 fiction and 13 non-fiction. Another 30 started but not finished. Non-fiction It seems I was pretty focused on business history b..."
+    },
+    {
+      "title": "Writing a minimal Lua implementation with a virtual machine from scratch in Rust",
+      "link": "http://notes.eatonphil.com/lua-in-rust.html",
+      "published_date": "Tue, 28 Dec 2021 00:00:00 +0000",
+      "author": "",
+      "description": "By the end of this guide we'll have a minimal, working implementation of a small part of Lua from scratch. It will be able to run the following program (among others): function fib ( n ) if n < 2 then..."
+    },
+    {
+      "title": "Running SQL Server in a container on Github Actions",
+      "link": "http://notes.eatonphil.com/sqlserver-in-github-actions.html",
+      "published_date": "Thu, 16 Dec 2021 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Implementing zip archiving in Golang: unzipping",
+      "link": "http://notes.eatonphil.com/implementing-zip-in-go-unzipping.html",
+      "published_date": "Tue, 23 Nov 2021 00:00:00 +0000",
+      "author": "",
+      "description": "All code for this post is available on Github . Let's take a look at how zip files work. Take a small file for example: $ cat hello.text Hello! Let's zip it up. $ zip test.zip hello.text adding: hello..."
+    },
+    {
+      "title": "Benchmarking esbuild, swc, tsc, and babel for React/JSX projects",
+      "link": "http://notes.eatonphil.com/benchmarking-esbuild-swc-typescript-babel.html",
+      "published_date": "Sat, 13 Nov 2021 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Building a fast SCSS-like rule expander for CSS using fuzzy parsing",
+      "link": "http://notes.eatonphil.com/building-a-nested-css-rule-expander.html",
+      "published_date": "Sun, 31 Oct 2021 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Exploring PL/pgSQL part two: implementing a Forth-like interpreter",
+      "link": "http://notes.eatonphil.com/exploring-plpgsql-forth-like.html",
+      "published_date": "Fri, 29 Oct 2021 00:00:00 +0000",
+      "author": "",
+      "description": "Previously in exploring PL/pgSQL: Strings, arrays, recursion and parsing JSON In my last post I walked through the basics of PL/pgSQL, the embedded procedural language inside of PostgreSQL. It covered..."
+    },
+    {
+      "title": "Exploring PL/pgSQL: Strings, arrays, recursion, and parsing JSON",
+      "link": "http://notes.eatonphil.com/exploring-plpgsql.html",
+      "published_date": "Sun, 24 Oct 2021 00:00:00 +0000",
+      "author": "",
+      "description": "Next in exploring PL/pgSQL: Implementing a Forth-like interpreter PostgreSQL comes with a builtin imperative programming language called PL/pgSQL. I used to think this language was scary because it ha..."
+    },
+    {
+      "title": "Experimenting with column- and row-oriented datastructures",
+      "link": "http://notes.eatonphil.com/experimenting-with-column-and-row-oriented-datastructures.html",
+      "published_date": "Mon, 18 Oct 2021 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Notes on running Electron",
+      "link": "http://notes.eatonphil.com/notes-on-running-electron.html",
+      "published_date": "Wed, 13 Oct 2021 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Enumerating and analyzing 40+ non-V8 JavaScript implementations",
+      "link": "http://notes.eatonphil.com/javascript-implementations.html",
+      "published_date": "Tue, 21 Sep 2021 00:00:00 +0000",
+      "author": "",
+      "description": "V8 is, I'm sure, the most used implementation of JavaScript today. Used in Chrome, (and by extension) Microsoft Edge, Node.js, etc. Safari's JavaScriptCore and Firefox's SpiderMonkey are also contende..."
+    },
+    {
+      "title": "Writing a simple JSON library from scratch: a tour through modern C++",
+      "link": "http://notes.eatonphil.com/writing-a-simple-json-library-in-modern-cpp.html",
+      "published_date": "Thu, 26 Aug 2021 00:00:00 +0000",
+      "author": "",
+      "description": "Modern C++ has a lot of cool features. Move semantics means passing around structs in functions is cheap. std::shared_ptr means I don't have to manage any memory; no more new / delete ! (But try as I ..."
+    },
+    {
+      "title": "Parser generators vs. handwritten parsers: surveying major language implementations in 2021",
+      "link": "http://notes.eatonphil.com/parser-generators-vs-handwritten-parsers-survey-2021.html",
+      "published_date": "Sat, 21 Aug 2021 00:00:00 +0000",
+      "author": "",
+      "description": "Developers often think parser generators are the sole legit way to build programming language frontends, possibly because compiler courses in university teach lex/yacc variants. But do any modern prog..."
+    },
+    {
+      "title": "Practical? Common Lisp on the JVM: A quick intro to ABCL for modern web apps",
+      "link": "http://notes.eatonphil.com/practical-common-lisp-on-the-jvm.html",
+      "published_date": "Thu, 05 Aug 2021 00:00:00 +0000",
+      "author": "",
+      "description": "In a ridiculous attempt to prove an internet wrong about the practicality of Lisp (Common Lisp specifically), I tried to get a simple (but realistic) web app running. After four days and a patch to AB..."
+    },
+    {
+      "title": "Writing an efficient object previewer for JavaScript",
+      "link": "http://notes.eatonphil.com/writing-an-efficient-javascript-object-previewer.html",
+      "published_date": "Thu, 15 Jul 2021 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "React without webpack: fast path to a working app from scratch",
+      "link": "http://notes.eatonphil.com/react-without-webpack.html",
+      "published_date": "Thu, 08 Jul 2021 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Controlled HTML select element in React has weird default UX",
+      "link": "http://notes.eatonphil.com/controlled-select-element-in-react-has-weird-ux.html",
+      "published_date": "Fri, 25 Jun 2021 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Leaders, you need to share organization success stories more frequently",
+      "link": "http://notes.eatonphil.com/leaders-share-company-success-stories.html",
+      "published_date": "Tue, 22 Jun 2021 00:00:00 +0000",
+      "author": "",
+      "description": "This post goes out to anyone who leads a team: managers, directors, VPs, executives. You need to share organization success stories with your organization on a regular and frequent basis. Talk about s..."
+    },
+    {
+      "title": "Languages you can run in the browser, part 1: Python, JavaScript, SQLite",
+      "link": "http://notes.eatonphil.com/languages-you-can-run-in-the-browser.html",
+      "published_date": "Thu, 17 Jun 2021 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Coolest hard-tech companies in NYC 2021",
+      "link": "http://notes.eatonphil.com/coolest-tech-companies-in-nyc-2021.html",
+      "published_date": "Fri, 04 Jun 2021 00:00:00 +0000",
+      "author": "",
+      "description": "For years I've kept a private list of really cool tech companies in NYC. Now that I'm funemployed it's the perfect time to publish. This list is influenced by 1) my perception of the difficulty of the..."
+    },
+    {
+      "title": "Writing a Jinja-inspired template library in Python",
+      "link": "http://notes.eatonphil.com/writing-a-template-library-in-python.html",
+      "published_date": "Sun, 23 May 2021 00:00:00 +0000",
+      "author": "",
+      "description": "In this post we'll build a minimal text templating library in Python inspired by Jinja. It will be able to display variables and iterate over arrays. By the end of this article, with around 300 lines ..."
+    },
+    {
+      "title": "Learning a new codebase: hacking on nginx",
+      "link": "http://notes.eatonphil.com/learning-a-new-codebase-hacking-nginx.html",
+      "published_date": "Sun, 04 Apr 2021 00:00:00 +0000",
+      "author": "",
+      "description": "I have never contributed to nginx. My C skills are 1/10. But downloading the source, hacking it up, compiling it, and running it doesn't scare me. This post is to help you overcome your own fears abou..."
+    },
+    {
+      "title": "How to get better at recursion",
+      "link": "http://notes.eatonphil.com/practicing-recursion.html",
+      "published_date": "Sun, 07 Mar 2021 00:00:00 +0000",
+      "author": "",
+      "description": "tldr; reimplement standard library functions in your favorite language without loops . Background For a few years after college I spent a lot of free time doing projects in Standard ML and Scheme. As ..."
+    },
+    {
+      "title": "Extending gosql to supporting LIMIT and OFFSET",
+      "link": "http://notes.eatonphil.com/extending-gosql-to-support-limit-and-offset.html",
+      "published_date": "Sat, 23 Jan 2021 00:00:00 +0000",
+      "author": "",
+      "description": "It's been a few months since I picked up gosql and I wanted to use it to prototype a SQL interface for data stored in S3. But one missing critical feature in gosql is LIMIT and OFFSET support. This po..."
+    },
+    {
+      "title": "The year in books: 20 to recommend in 2020",
+      "link": "http://notes.eatonphil.com/year-in-books-2020.html",
+      "published_date": "Sun, 27 Dec 2020 00:00:00 +0000",
+      "author": "",
+      "description": "This year I finished 47 books, up from last year but not a personal best. The breakdown was 17 non-fiction and 30 fiction. Another 20-30 remain started but unfinished this year. Non-fiction The 8 non-..."
+    },
+    {
+      "title": "Static analysis with semgrep: practical examples using Docker",
+      "link": "http://notes.eatonphil.com/static-analysis-with-semgrep.html",
+      "published_date": "Sun, 20 Dec 2020 00:00:00 +0000",
+      "author": "",
+      "description": "In this post we'll get a basic semgrep environment set up in Docker running some custom rules against our code. Existing linters Linters like pylint for Python or eslint for JavaScript are great for g..."
+    },
+    {
+      "title": "Emulating linux/AMD64 userland: interpreting an ELF binary",
+      "link": "http://notes.eatonphil.com/emulating-amd64-starting-with-elf.html",
+      "published_date": "Thu, 26 Nov 2020 00:00:00 +0000",
+      "author": "",
+      "description": "In this post we'll stumble toward a working emulator for a barebones C program compiled for linux/AMD64. The approach will be slightly more so based on observation than by following a spec; a great wa..."
+    },
+    {
+      "title": "The impact of management teams as a decision-making group, in startups and enterprise",
+      "link": "http://notes.eatonphil.com/the-impact-of-management-teams-on-startups-and-enterprises.html",
+      "published_date": "Wed, 11 Nov 2020 00:00:00 +0000",
+      "author": "",
+      "description": "Ambitious companies form management teams at every level above you, sometimes including you. Management teams meet periodically and have private chat rooms. They discuss customers, product and organiz..."
+    },
+    {
+      "title": "Standard ML in 2020",
+      "link": "http://notes.eatonphil.com/standard-ml-in-2020.html",
+      "published_date": "Sun, 25 Oct 2020 00:00:00 +0000",
+      "author": "",
+      "description": "Incredibly, Standard ML implementations are still actively developed. MLton , Poly/ML , MLKit , SML# and SML/NJ are the most prominent. Discussion on the future direction of Standard ML remains health..."
+    },
+    {
+      "title": "The case for comments in code",
+      "link": "http://notes.eatonphil.com/the-case-for-comments-in-code.html",
+      "published_date": "Mon, 07 Sep 2020 00:00:00 +0000",
+      "author": "",
+      "description": "When I first started programming, especially when asked for code samples, my comments lacked purpose and would often duplicate in English what the code clearly indicated. I knew that \"commenting is go..."
+    },
+    {
+      "title": "Writing a simple Python compiler: 1. hello, fibonacci",
+      "link": "http://notes.eatonphil.com/writing-a-simple-python-compiler.html",
+      "published_date": "Sun, 16 Aug 2020 00:00:00 +0000",
+      "author": "",
+      "description": "In this post we'll write a Python to C compiler in Python. This is especially easy to do since Python has a builtin parser library and because a number of CPython internals are exposed for extension w..."
+    },
+    {
+      "title": "Let's build a Full-Text Search engine",
+      "link": "https://artem.krylysov.com/blog/2020/07/28/lets-build-a-full-text-search-engine/",
+      "published_date": "2020-07-28T00:00:00Z",
+      "author": "",
+      "description": "Full-Text Search is one of those tools people use every day without realizing it. If you ever googled \"golang coverage report\" or tried to find \"indoor wireless camera\" on an e-commerce website, you u..."
+    },
+    {
+      "title": "A single-node Kubernetes cluster without virtualization or a container registry",
+      "link": "http://notes.eatonphil.com/a-single-node-kubernetes-cluster-without-virtualization-or-a-container-registry.html",
+      "published_date": "Sat, 25 Jul 2020 00:00:00 +0000",
+      "author": "",
+      "description": "This post is a recipe for setting up a minimal Kubernetes cluster on Fedora without requiring virtualization or a container registry. These two features make the system cloud-agnostic and the cluster ..."
+    },
+    {
+      "title": "Generating a full-stack application from a database",
+      "link": "http://notes.eatonphil.com/generating-a-full-stack-application-from-a-database.html",
+      "published_date": "Sun, 14 Jun 2020 00:00:00 +0000",
+      "author": "",
+      "description": "DBCore can now generate a TypeScript/React CRUD UI that is automatically hooked up to the generated REST API (in Go). The UI has full support for login, viewing (and filtering), editing, and creating ..."
+    },
+    {
+      "title": "Generating a REST API from a database",
+      "link": "http://notes.eatonphil.com/generating-a-rest-api-from-a-database.html",
+      "published_date": "Sat, 06 Jun 2020 00:00:00 +0000",
+      "author": "",
+      "description": "I recently published an alpha version of a code generation tool, DBCore, that reads a database schema from PostgreSQL or MySQL and generates an entire Go API with CRUD operations, pagination, filterin..."
+    },
+    {
+      "title": "RFCs and asynchronous-first culture",
+      "link": "http://notes.eatonphil.com/rfcs-and-asynchronous-first-culture.html",
+      "published_date": "Sat, 16 May 2020 00:00:00 +0000",
+      "author": "",
+      "description": "I hated writing documentation before working on features. But after a while I realized I couldn't communicate well enough, even with folks I had a good connection with. It took me a number of mistaken..."
+    },
+    {
+      "title": "Writing a SQL database from scratch in Go: 4. a database/sql driver",
+      "link": "http://notes.eatonphil.com/database-basics-a-database-sql-driver.html",
+      "published_date": "Sun, 10 May 2020 00:00:00 +0000",
+      "author": "",
+      "description": "Previously in database basics: <! forgive me, for I have sinned > 1. SELECT, INSERT, CREATE and a REPL 2. binary expressions and WHERE filters 3. indexes In this post, we'll extend gosql to implement ..."
+    },
+    {
+      "title": "Writing a SQL database from scratch in Go: 3. indexes",
+      "link": "http://notes.eatonphil.com/database-basics-indexes.html",
+      "published_date": "Fri, 01 May 2020 00:00:00 +0000",
+      "author": "",
+      "description": "Previously in database basics: <! forgive me, for I have sinned > 1. SELECT, INSERT, CREATE and a REPL 2. binary expressions and WHERE filters Next in database basics: 4. a database/sql driver In this..."
+    },
+    {
+      "title": "Writing a SQL database from scratch in Go: 2. binary expressions and WHERE filters",
+      "link": "http://notes.eatonphil.com/database-basics-expressions-and-where.html",
+      "published_date": "Sun, 12 Apr 2020 00:00:00 +0000",
+      "author": "",
+      "description": "Previously in database basics: <! forgive me, for I have sinned > 1. SELECT, INSERT, CREATE and a REPL Next in database basics: 3. indexes 4. a database/sql driver In this post, we'll extend gosql to ..."
+    },
+    {
+      "title": "Studying foreign languages with inbox zero",
+      "link": "http://notes.eatonphil.com/studying-with-inbox-zero.html",
+      "published_date": "Sat, 04 Apr 2020 00:00:00 +0000",
+      "author": "",
+      "description": "The only time I've been able to seriously, rapidly improve my ability to speak a foreign language was through intensive language courses in college. I was forced to actively speak, read, and write Chi..."
+    },
+    {
+      "title": "Reviewing the Surface Book 2",
+      "link": "http://notes.eatonphil.com/reviewing-the-surface-book-2.html",
+      "published_date": "Wed, 18 Mar 2020 00:00:00 +0000",
+      "author": "",
+      "description": "The first few paragraphs cover what I was looking for and what I considered. Then the review. Why the Surface Book 2 I used a Macbook throughout my professional career until I had the choice a few yea..."
+    },
+    {
+      "title": "Writing a SQL database from scratch in Go: 1. SELECT, INSERT, CREATE and a REPL",
+      "link": "http://notes.eatonphil.com/database-basics.html",
+      "published_date": "Fri, 06 Mar 2020 00:00:00 +0000",
+      "author": "",
+      "description": "Next in database basics: <! forgive me, for I have sinned > 2. binary expressions and WHERE filters 3. indexes 4. a database/sql driver In this series we'll write a rudimentary database from scratch i..."
+    },
+    {
+      "title": "A minimal REST API in Java",
+      "link": "http://notes.eatonphil.com/a-minimal-rest-api-in-java.html",
+      "published_date": "Sat, 01 Feb 2020 00:00:00 +0000",
+      "author": "",
+      "description": "There's a style of Java that is a joy to write. This post will cover how to set up a basic PostgreSQL-integrated REST API using Jersey and JOOQ in a style not dissimilar to Flask and SQLAlchemy in Pyt..."
+    },
+    {
+      "title": "Writing a lisp compiler from scratch in JavaScript: 6. an x86 upgrade",
+      "link": "http://notes.eatonphil.com/compiler-basics-an-x86-upgrade.html",
+      "published_date": "Sun, 08 Dec 2019 00:00:00 +0000",
+      "author": "",
+      "description": "Previously in compiler basics: <! forgive me, for I have sinned > 1. lisp to assembly 2. user-defined functions and variables 3. LLVM 4. LLVM conditionals and compiling fibonacci 5. LLVM system calls ..."
+    },
+    {
+      "title": "Confusion and disengagement in meetings",
+      "link": "http://notes.eatonphil.com/confusion-disengagement-in-meetings.html",
+      "published_date": "Sat, 30 Nov 2019 00:00:00 +0000",
+      "author": "",
+      "description": "The quickest way to cut through confusion or disagreement among otherwise amiable and honest folks is to ask questions. Ask early so you don't waste time. But it's not enough to just ask clarifying qu..."
+    },
+    {
+      "title": "Interpreting Go",
+      "link": "http://notes.eatonphil.com/interpreting-go.html",
+      "published_date": "Sat, 12 Oct 2019 00:00:00 +0000",
+      "author": "",
+      "description": "After spending some time at work on tooling for keeping documentation in sync with Go struct definitions I had enough exposure to Go's built-in parsing package that next steps were clear: write an int..."
+    },
+    {
+      "title": "Administering Kubernetes is hard",
+      "link": "http://notes.eatonphil.com/administering-kubernetes-is-hard.html",
+      "published_date": "Mon, 30 Sep 2019 00:00:00 +0000",
+      "author": "",
+      "description": "Kubernetes is easy to use after some exposure; it's pretty convenient too. But it is super hard to set up. eksctl is a good tool for folks who don't want to spend hours/days/weeks debugging VPC config..."
+    },
+    {
+      "title": "Unit testing C code with gtest",
+      "link": "http://notes.eatonphil.com/unit-testing-c-code-with-gtest.html",
+      "published_date": "Sat, 31 Aug 2019 00:00:00 +0000",
+      "author": "",
+      "description": "This post covers building and testing a minimal, but still useful, C project. We'll use Google's gtest and CMake for testing C code. This will serve as a foundation for some upcoming posts/projects on..."
+    },
+    {
+      "title": "Writing an x86 emulator from scratch in JavaScript: 2. system calls",
+      "link": "http://notes.eatonphil.com/emulator-basics-system-calls.html",
+      "published_date": "Sat, 20 Jul 2019 00:00:00 +0000",
+      "author": "",
+      "description": "Previously in emulator basics: <! forgive me, for I have sinned > 1. a stack and register machine In this post we'll extend x86e to support the exit and write Linux system calls, or syscalls. A syscal..."
+    },
+    {
+      "title": "Writing a lisp compiler from scratch in JavaScript: 6. LLVM system calls",
+      "link": "http://notes.eatonphil.com/compiler-basics-llvm-system-calls.html",
+      "published_date": "Sat, 22 Jun 2019 00:00:00 +0000",
+      "author": "",
+      "description": "Previously in compiler basics: <! forgive me, for I have sinned > 1. lisp to assembly 2. user-defined functions and variables 3. LLVM 4. LLVM conditionals and compiling fibonacci Next in compiler basi..."
+    },
+    {
+      "title": "Writing an x86 emulator from scratch in JavaScript: 1. a stack and register machine",
+      "link": "http://notes.eatonphil.com/emulator-basics-a-stack-and-register-machine.html",
+      "published_date": "Tue, 21 May 2019 00:00:00 +0000",
+      "author": "",
+      "description": "Better yet, take a look at this post walking through emulating x86 ELF binaries in Go: Emulating linux/AMD64 userland: interpreting an ELF binary Next up in emulator basics: <! forgive me, for I have ..."
+    },
+    {
+      "title": "Tail call elimination",
+      "link": "http://notes.eatonphil.com/tail-call-elimination.html",
+      "published_date": "Tue, 14 May 2019 00:00:00 +0000",
+      "author": "",
+      "description": "In this post we'll explore what tail calls are, why they are useful, and how they can be eliminated in an interpreter, a compiler targeting C++, and a compiler targeting LLVM IR. Tail calls A tail cal..."
+    },
+    {
+      "title": "Writing a lisp compiler from scratch in JavaScript: 4. LLVM conditionals and compiling fibonacci",
+      "link": "http://notes.eatonphil.com/compiler-basics-llvm-conditionals.html",
+      "published_date": "Sat, 04 May 2019 00:00:00 +0000",
+      "author": "",
+      "description": "Previously in compiler basics: <! forgive me, for I have sinned > 1. lisp to assembly 2. user-defined functions and variables 3. LLVM Next in compiler basics: 5. LLVM system calls 6. an x86 upgrade In..."
+    },
+    {
+      "title": "Responsibility and ownership",
+      "link": "http://notes.eatonphil.com/responsibility-and-ownership.html",
+      "published_date": "Tue, 30 Apr 2019 00:00:00 +0000",
+      "author": "",
+      "description": "Responsibility is only possible by granting ownership and setting expectations. If you don't turn over ownership, don't expect folks to take responsibility. When you grant ownership and set expectatio..."
+    },
+    {
+      "title": "Interpreting TypeScript",
+      "link": "http://notes.eatonphil.com/interpreting-typescript.html",
+      "published_date": "Sun, 14 Apr 2019 00:00:00 +0000",
+      "author": "",
+      "description": "In addition to providing a static type system and compiler for a superset of JavaScript, TypeScript makes much of its functionality available programmatically. In this post we'll use the TypeScript co..."
+    },
+    {
+      "title": "Writing a web server from scratch: 1. HTTP and sockets",
+      "link": "http://notes.eatonphil.com/web-server-basics-http-and-sockets.html",
+      "published_date": "Sat, 06 Apr 2019 00:00:00 +0000",
+      "author": "",
+      "description": "Say we have some HTML: < html > < body > < h1 > Hello world! </ h1 > </ body > </ html > And say we'd like to be able to render this page in a web browser. If the server is hosted locally we may want ..."
+    },
+    {
+      "title": "Writing a simple JSON path parser",
+      "link": "http://notes.eatonphil.com/writing-a-simple-json-path-parser.html",
+      "published_date": "Wed, 27 Mar 2019 00:00:00 +0000",
+      "author": "",
+      "description": "Let's say we want to implement a simple list filtering language so we can enter a.b = 12 and return only results in a list where the a column is an object that contains a field b that is set to the va..."
+    },
+    {
+      "title": "Writing a lisp compiler from scratch in JavaScript: 3. LLVM",
+      "link": "http://notes.eatonphil.com/compiler-basics-llvm.html",
+      "published_date": "Sun, 10 Mar 2019 00:00:00 +0000",
+      "author": "",
+      "description": "Previously in compiler basics: <! forgive me, for I have sinned > 1. lisp to assembly 2. user-defined functions and variables Next in compiler basics: 4. LLVM conditionals and compiling fibonacci 5. L..."
+    },
+    {
+      "title": "AOT-compilation of Javascript with V8",
+      "link": "http://notes.eatonphil.com/aot-compilation-of-javascript-with-v8.html",
+      "published_date": "Tue, 26 Feb 2019 00:00:00 +0000",
+      "author": "",
+      "description": "tldr; I'm working on a AOT-compiled Javascript implementation called jsc . Many dynamically typed programming languages have implementations that compile to native binaries: Python: Cython Common Lisp..."
+    },
+    {
+      "title": "Transparency and communication on small teams",
+      "link": "http://notes.eatonphil.com/transparency-and-communication-on-small-teams.html",
+      "published_date": "Tue, 22 Jan 2019 00:00:00 +0000",
+      "author": "",
+      "description": "I saw a post on dev.to that talks about dysfunctional teams. This is a response that focuses specifically on how to prevent burnout from overworking. This is aimed at senior/lead engineers and enginee..."
+    },
+    {
+      "title": "Windows",
+      "link": "http://notes.eatonphil.com/windows.html",
+      "published_date": "Sun, 20 Jan 2019 00:00:00 +0000",
+      "author": "",
+      "description": "It has been six years since I last used Windows for any remotely serious software development. I've used Ubuntu, Arch, or FreeBSD since. But eventually I spent so much time working around common workp..."
+    },
+    {
+      "title": "Writing a lisp compiler from scratch in JavaScript: 2. user-defined functions and variables",
+      "link": "http://notes.eatonphil.com/compiler-basics-functions.html",
+      "published_date": "Sun, 20 Jan 2019 00:00:00 +0000",
+      "author": "",
+      "description": "Previously in compiler basics: <! forgive me, for I have sinned > 1. lisp to assembly Next in compiler basics: 3. LLVM 4. LLVM conditionals and compiling fibonacci 5. LLVM system calls 6. an x86 upgra..."
+    },
+    {
+      "title": "Make small changes and solve the problems you have",
+      "link": "http://notes.eatonphil.com/make-small-changes-and-solve-the-problems-you-have.html",
+      "published_date": "Thu, 27 Dec 2018 00:00:00 +0000",
+      "author": "",
+      "description": "Two frustrating things that can happen in an organization are 1) big changes and 2) changes that aren’t clearly associated with a known problem. It’s even worse in that order. These situations tend to..."
+    },
+    {
+      "title": "String interning in Go",
+      "link": "https://artem.krylysov.com/blog/2018/12/12/string-interning-in-go/",
+      "published_date": "2018-12-12T00:00:00Z",
+      "author": "",
+      "description": "String interning is a technique of storing only one copy of each unique string in memory. It can significantly reduce memory usage for applications that store many duplicated strings. The built-in str..."
+    },
+    {
+      "title": "Writing a lisp compiler from scratch in JavaScript: 1. lisp to assembly",
+      "link": "http://notes.eatonphil.com/compiler-basics-lisp-to-assembly.html",
+      "published_date": "Tue, 20 Nov 2018 00:00:00 +0000",
+      "author": "",
+      "description": "Next in compiler basics: <! forgive me, for I have sinned > 2. user-defined functions and variables 3. LLVM 4. LLVM conditionals and compiling fibonacci 5. LLVM system calls 6. an x86 upgrade In this ..."
+    },
+    {
+      "title": "On NYC, Tokyo and Seoul",
+      "link": "http://notes.eatonphil.com/on-nyc-tokyo-and-seoul.html",
+      "published_date": "Sat, 20 Oct 2018 00:00:00 +0000",
+      "author": "",
+      "description": "I’ve lived in NYC for the past year — moved here after years in Philly and after growing up in a rural community a few hours west of there. My wife is South Korean and last week concluded my second tr..."
+    },
+    {
+      "title": "Why (and how) to read books",
+      "link": "http://notes.eatonphil.com/why-and-how-to-read-books.html",
+      "published_date": "Wed, 26 Sep 2018 00:00:00 +0000",
+      "author": "",
+      "description": "The last time I read for fun was in elementary school. Since college I knew I must read more, but I never forced myself to build the habit. Then three years ago I spent time around my brother and a co..."
+    },
+    {
+      "title": "Compiling dynamic programming languages",
+      "link": "http://notes.eatonphil.com/compiling-dynamic-programming-languages.html",
+      "published_date": "Sun, 02 Sep 2018 00:00:00 +0000",
+      "author": "",
+      "description": "It can be difficult to disassociate the idea that dynamically typed programming languages are tied to byte-code interpreters (e.g. YARV Ruby, CPython, V8, Zend Engine, etc.). But for many languages, a..."
+    },
+    {
+      "title": "btest: a language agnostic test runner",
+      "link": "http://notes.eatonphil.com/btest-a-language-agnostic-test-runner.html",
+      "published_date": "Sat, 04 Aug 2018 00:00:00 +0000",
+      "author": "",
+      "description": "btest is a minimal, language-agnostic test runner originally written for testing compilers. Brian, an ex- co-worker from Linode, wrote the first implementation in Crystal (a compiled language clone of..."
+    },
+    {
+      "title": "Writing to be read",
+      "link": "http://notes.eatonphil.com/writing-to-be-read.html",
+      "published_date": "Fri, 18 May 2018 00:00:00 +0000",
+      "author": "",
+      "description": "There is a common struggle in the writing and maintenance of documentation, checklists, emails, guides, etc. Each provides immense value; a document may be the key to an important process. The goal is..."
+    },
+    {
+      "title": "Writing a simple JSON parser",
+      "link": "http://notes.eatonphil.com/writing-a-simple-json-parser.html",
+      "published_date": "Sun, 06 May 2018 00:00:00 +0000",
+      "author": "",
+      "description": "Writing a JSON parser is one of the easiest ways to get familiar with parsing techniques. The format is extremely simple. It's defined recursively so you get a slight challenge compared to, say, parsi..."
+    },
+    {
+      "title": "Finishing up a FreeBSD experiment",
+      "link": "http://notes.eatonphil.com/finishing-up-a-freebsd-experiment.html",
+      "published_date": "Sat, 28 Apr 2018 00:00:00 +0000",
+      "author": "",
+      "description": "I've been using FreeBSD as my daily driver at work since December. I've successfully done my job and I've learned a hell of a lot forcing myself on CURRENT... But there's been a number of issues with ..."
+    },
+    {
+      "title": "Book Review: ANSI Common Lisp",
+      "link": "http://notes.eatonphil.com/book-review-ansi-common-lisp.html",
+      "published_date": "Sun, 25 Mar 2018 00:00:00 +0000",
+      "author": "",
+      "description": "Score: 4.5 / 5 Paul Graham and his editor(s) are excellent. His prose is light and easy to follow. The only awkward component of the book's organization is that he tends to use a concept one section b..."
+    },
+    {
+      "title": "Pogreb - key-value store for read-heavy workloads",
+      "link": "https://artem.krylysov.com/blog/2018/03/24/pogreb-key-value-store/",
+      "published_date": "2018-03-24T00:00:00Z",
+      "author": "",
+      "description": "Note This post is outdated, please read the new design document on GitHub . A few months ago I released the first version of an embedded on-disk key-value store written in Go. The store is about 10 ti..."
+    },
+    {
+      "title": "Starting a minimal Common Lisp project",
+      "link": "http://notes.eatonphil.com/starting-a-minimal-common-lisp-project.html",
+      "published_date": "Mon, 05 Mar 2018 00:00:00 +0000",
+      "author": "",
+      "description": "If you've only vaguely heard of Lisp before or studied Scheme in school, Common Lisp is nothing like what you'd expect. While functional programming is all the rage in Scheme, Common Lisp was \"express..."
+    },
+    {
+      "title": "Interview with the D Language Blog: BSDScheme",
+      "link": "http://notes.eatonphil.com/project-highlight-bsdscheme.html",
+      "published_date": "Sat, 20 Jan 2018 00:00:00 +0000",
+      "author": "",
+      "description": "This is an external post of mine. Click here if you are not redirected."
+    },
+    {
+      "title": "Porting Go web applications to AWS Lambda",
+      "link": "https://artem.krylysov.com/blog/2018/01/18/porting-go-web-applications-to-aws-lambda/",
+      "published_date": "2018-01-18T00:00:00Z",
+      "author": "",
+      "description": "Running Go on AWS Lambda is not something totally new - developers figured out how to launch Go binaries from Python a while ago, but it wasn't convenient and had some performance implications. A few ..."
+    },
+    {
+      "title": "First few hurdles writing a Scheme interpreter",
+      "link": "http://notes.eatonphil.com/first-few-hurdles-writing-a-scheme-interpreter.html",
+      "published_date": "Wed, 10 Jan 2018 00:00:00 +0000",
+      "author": "",
+      "description": "I started working on BSDScheme last October, inspired to get back into language implementation after my coworker built bshift , a compiler for a C-like language. BSDScheme is an interpreter for a (cur..."
+    },
+    {
+      "title": "Handling C++ exceptions in Go",
+      "link": "https://artem.krylysov.com/blog/2017/04/13/handling-cpp-exceptions-in-go/",
+      "published_date": "2017-04-13T00:00:00Z",
+      "author": "",
+      "description": "Cgo is a mechanism that allows Go packages call C code. The Go compiler enables cgo for every .go source file that imports a special pseudo package \"C\" . The text in the comment before the import \"C\" ..."
+    },
+    {
+      "title": "Profiling and optimizing Go web applications",
+      "link": "https://artem.krylysov.com/blog/2017/03/13/profiling-and-optimizing-go-web-applications/",
+      "published_date": "2017-03-13T00:00:00Z",
+      "author": "",
+      "description": "Note This post was updated on 2021-04-25. Go has a powerful built-in profiler that supports CPU, memory, goroutine and block (contention) profiling. Enabling the profiler # Go provides a low-level pro..."
+    },
+    {
+      "title": "Deploying FreeBSD on Linode unattended in minutes",
+      "link": "http://notes.eatonphil.com/deploying-freebsd-on-linode-unattended-in-minutes.html",
+      "published_date": "Sat, 11 Mar 2017 00:00:00 +0000",
+      "author": "",
+      "description": "I became a FreeBSD user over 2 years ago when I wanted to see what all the fuss was about. I swapped my y410p dual-booting Windows / Ubuntu with FreeBSD running Gnome 3. I learned a lot during the tra..."
+    },
+    {
+      "title": "Walking through a basic Racket web service",
+      "link": "http://notes.eatonphil.com/walking-through-a-basic-racket-web-service.html",
+      "published_date": "Thu, 29 Dec 2016 00:00:00 +0000",
+      "author": "",
+      "description": "Racket is an impressive language and ecosystem. Compared to Python, Racket (an evolution of Scheme R5RS is three years younger. It is as concise and expressive as Python but with much more reasonable ..."
+    },
+    {
+      "title": "Scraping the Web with AWS Lambda and PhantomJS",
+      "link": "https://artem.krylysov.com/blog/2016/06/22/scraping-the-web-with-aws-lambda-and-phantomjs/",
+      "published_date": "2016-06-22T00:00:00Z",
+      "author": "",
+      "description": "Here are the slides from my talk \"Scraping the Web with AWS Lambda and PhantomJS\" given at Greater Philadelphia AWS User Group meetup on May 25, 2016. You can find the source code of PhantomJS/Node.js..."
+    },
+    {
+      "title": "Benchmark of Python JSON libraries",
+      "link": "https://artem.krylysov.com/blog/2015/09/29/benchmark-python-json-libraries/",
+      "published_date": "2015-09-29T00:00:00Z",
+      "author": "",
+      "description": "Note This post was updated on 2016-08-13: added python-rapidjson ; updated simplejson and ujson . A couple of weeks ago after spending some time with Python profiler, I discovered that Python’s json m..."
+    }
+  ]
+}
