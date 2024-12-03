@@ -13,7 +13,7 @@ const { title, description } = Astro.props;
 <html lang="en" class="bg-frieren bg-no-repeat bg-cover bg-fixed bg-center">
   <Header title={title} description={description} />
   <body
-    class="font-mono min-h-screen md:backdrop-blur-[5px] bg-background/85 tracking-wide"
+    class="font-mono min-h-dvh md:backdrop-blur-[5px] bg-background/85 tracking-wide"
   >
     <Analytics />
     <div
@@ -26,7 +26,7 @@ const { title, description } = Astro.props;
       >
       <slot />
       <div class="my-10"></div>
-      <div class="h-1 w-full my-4 bg-slate-800"></div>
+      <div class="h-1 w-full my-4 bg-slate-800 pb-8"></div>
     </div>
   </body>
 </html>
