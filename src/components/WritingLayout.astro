@@ -10,17 +10,14 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html
-  lang="en"
-  class="bg-frieren bg-no-repeat bg-cover bg-fixed bg-center pb-8"
->
+<html lang="en" class="bg-frieren bg-no-repeat bg-cover bg-fixed bg-center">
   <Header title={title} description={description} />
   <body
     class="font-mono min-h-dvh md:backdrop-blur-[5px] bg-background/85 tracking-wide"
   >
     <Analytics />
     <div
-      class="container mx-auto my-0 lg:max-w-[850px] text-zinc-50 p-5 text-sm md:text-base"
+      class="container mx-auto my-0 lg:max-w-[850px] text-zinc-50 p-5 text-sm md:text-base pb-8"
     >
       <a
         href="/"
