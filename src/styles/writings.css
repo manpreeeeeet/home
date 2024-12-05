@@ -28,6 +28,10 @@
     @apply bg-slate-700;
   }
 
+  ::-webkit-scrollbar-corner {
+    background: rgba(0, 0, 0, 0);
+  }
+
   p {
     @apply text-sm md:text-base;
   }
@@ -35,9 +39,11 @@
   * {
     @apply font-sans;
   }
+
   pre {
     @apply p-2 max-h-[500px];
   }
+
   pre code {
     @apply font-mono;
   }
@@ -58,6 +64,7 @@
   h5 {
     @apply font-bold mt-4 md:mt-8 leading-3 text-peacock;
   }
+
   h1 {
     @apply text-xl md:text-3xl;
   }
