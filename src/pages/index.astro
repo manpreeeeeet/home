@@ -5,6 +5,7 @@ import Header from "../components/Header.astro";
 import Analytics from "@vercel/analytics/astro";
 import { Image } from "astro:assets";
 import frieren from "../../public/frieren.png";
+import { Metrics } from "../components/Metrics";
 const posts = await getCollection("writings");
 ---
 
@@ -19,6 +20,7 @@ const posts = await getCollection("writings");
     <div
       class="container mx-auto lg:max-w-screen-md text-zinc-50 text-sm md:text-base p-5 tracking-wide"
     >
+      <Metrics />
       <div class="flex gap-10 pt-20 items-start">
         <Image
           class="w-full max-w-[200px] md:max-w-[400px] h-auto object-contain"
