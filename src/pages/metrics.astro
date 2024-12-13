@@ -1,6 +1,6 @@
 ---
 import Header from "../components/Header.astro";
-import { Metrics } from "../components/Metrics";
+import { Metrics as MetricComponent } from "../components/Metrics";
 ---
 
 <!doctype html>
@@ -13,7 +13,7 @@ import { Metrics } from "../components/Metrics";
     <div
       class="container mx-auto lg:max-w-screen-md text-zinc-50 text-sm md:text-base p-5 tracking-wide"
     >
-      <Metrics client:load />
+      <MetricComponent client:load />
     </div>
   </body>
 </html>
