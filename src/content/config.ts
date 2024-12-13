@@ -5,6 +5,7 @@ const writings = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
+    hidden: z.boolean().default(false),
   }),
 });
 

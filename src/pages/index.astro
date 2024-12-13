@@ -5,7 +5,6 @@ import Header from "../components/Header.astro";
 import Analytics from "@vercel/analytics/astro";
 import { Image } from "astro:assets";
 import frieren from "../../public/frieren.png";
-import { Metrics } from "../components/Metrics";
 const posts = await getCollection("writings");
 ---
 
@@ -20,7 +19,6 @@ const posts = await getCollection("writings");
     <div
       class="container mx-auto lg:max-w-screen-md text-zinc-50 text-sm md:text-base p-5 tracking-wide"
     >
-      <Metrics />
       <div class="flex gap-10 pt-20 items-start">
         <Image
           class="w-full max-w-[200px] md:max-w-[400px] h-auto object-contain"
@@ -31,20 +29,13 @@ const posts = await getCollection("writings");
         <div class="flex flex-col gap-4 md:gap-10">
           <h1 class="text-xl md:text-4xl">mnprt.me</h1>
           <ul class="flex flex-col gap-2">
-            <li>
-              <a
-                href="https://github.com/manpreeeeeet"
-                class="hover:cursor-pointer hover:bg-blue-400/30 text-blue-500 py-2"
-                >[ <span class="underline">github</span> ]
-              </a>
-            </li>
-            <li>
-              <a
-                href="/blogs"
-                class="hover:cursor-pointer hover:bg-blue-400/30 text-blue-500 py-2"
-                >[ <span class="underline">rss feed of blogs i like</span> ]
-              </a>
-            </li>
+            <!--<li>-->
+            <!--  <a-->
+            <!--    href="/blogs"-->
+            <!--    class="hover:cursor-pointer hover:bg-blue-400/30 text-blue-500 py-2"-->
+            <!--    >[ <span class="underline">rss feed of blogs i like</span> ]-->
+            <!--  </a>-->
+            <!--</li>-->
           </ul>
         </div>
       </div>
@@ -74,16 +65,18 @@ const posts = await getCollection("writings");
         <h1 class="text-sm md:text-xl pb-2 text-peacock">## Posts</h1>
         <ul class="flex flex-col gap-2">
           {
-            posts.map((post) => (
-              <a
-                href={`/posts/${post.slug}/`}
-                class="visited:text-purple-500 text-blue-500"
-              >
-                <li class="hover:cursor-pointer hover:bg-slate-800">
-                  [ {post.data.title} ]
-                </li>
-              </a>
-            ))
+            posts
+              .filter((post) => !post.data.hidden)
+              .map((post) => (
+                <a
+                  href={`/posts/${post.slug}/`}
+                  class="visited:text-purple-500 text-blue-500"
+                >
+                  <li class="hover:cursor-pointer hover:bg-slate-800">
+                    [ {post.data.title} ]
+                  </li>
+                </a>
+              ))
           }
         </ul>
       </div>
