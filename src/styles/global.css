@@ -11,19 +11,19 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-pink-800/10 dark:bg-inherit;
+    @apply bg-pink-800/10 dark:bg-inherit weeb:bg-inherit;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-pink-800/30 dark:bg-slate-600 rounded-sm;
+    @apply bg-pink-800/30 dark:bg-slate-600 weeb:bg-slate-600 rounded-sm;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-pink-800/30 dark:bg-slate-700;
+    @apply bg-pink-800/30 dark:bg-slate-700 weeb:dark:bg-slate-700;
   }
 
   ::-webkit-scrollbar-corner {
-    @apply bg-pink-800/10 dark:bg-transparent;
+    @apply bg-pink-800/10 dark:bg-transparent weeb:bg-transparent;
   }
   :root {
     --radius: 0.5rem;
@@ -41,4 +41,8 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+}
+
+body {
+  padding-left: calc(100vw - 100%);
 }
