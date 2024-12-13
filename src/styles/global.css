@@ -15,11 +15,11 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-pink-800/30 dark:bg-slate-600 weeb:bg-slate-600 rounded-sm;
+    @apply bg-pink-800/30 dark:bg-slate-600 weeb:bg-slate-600;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-pink-800/30 dark:bg-slate-700 weeb:dark:bg-slate-700;
+    @apply bg-pink-800/30 dark:bg-slate-700 weeb:bg-slate-700;
   }
 
   ::-webkit-scrollbar-corner {
