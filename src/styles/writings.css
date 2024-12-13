@@ -12,26 +12,6 @@
 }
 
 @layer base {
-  ::-webkit-scrollbar {
-    @apply w-2;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-inherit;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-slate-600 rounded-sm;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-slate-700;
-  }
-
-  ::-webkit-scrollbar-corner {
-    background: rgba(0, 0, 0, 0);
-  }
-
   p {
     @apply text-sm md:text-base;
   }
@@ -62,27 +42,7 @@
   h3,
   h4,
   h5 {
-    @apply font-bold mt-4 md:mt-8 leading-3 text-peacock;
-  }
-
-  h1 {
-    @apply text-xl md:text-3xl;
-  }
-
-  h2 {
-    @apply text-lg md:text-2xl;
-  }
-
-  h3 {
-    @apply text-base md:text-xl;
-  }
-
-  h4 {
-    @apply text-sm md:text-lg;
-  }
-
-  h5 {
-    @apply text-xs md:text-base;
+    @apply font-bold mt-4 md:mt-8 leading-3 text-cyan-700 text-sm md:text-xl;
   }
 
   p {
@@ -106,9 +66,29 @@
   }
 
   p code {
-    @apply bg-[#24292e] inline-block rounded-sm text-sm md:text-base px-2 py-0 text-pink-400;
+    @apply inline-block text-sm md:text-base px-2 py-0 dark:bg-slate-800 weeb:bg-slate-800 text-pink-800 dark:text-pink-400 weeb:text-pink-400 bg-slate-200;
   }
 
   blockquote {
   }
+}
+
+.dark .astro-code,
+.dark .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  /* Optional, if you also want font styles */
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+.weeb .astro-code,
+.weeb .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  /* Optional, if you also want font styles */
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
 }

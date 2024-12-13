@@ -1,14 +1,15 @@
+import plugin from "tailwindcss/plugin";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
-      backgroundImage: {
-        frieren: "url('/lain.webp')",
-      },
       colors: {
         background: "#000000e6",
+        backgroundWhite: "#fff9",
+        textBlack: "#1c1e21",
         peacock: "#31748f",
         fadegreen: "#9cd8a0",
       },
@@ -30,5 +31,10 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    plugin(function ({ addVariant }) {
+      addVariant("weeb", ".weeb &");
+    }),
+  ],
 };

@@ -1,68 +1,72 @@
 ---
 // src/pages/writings.astro
+import "../styles/global.css";
 import { getCollection } from "astro:content";
 import Header from "../components/Header.astro";
 import Analytics from "@vercel/analytics/astro";
 import { Image } from "astro:assets";
 import frieren from "../../public/frieren.png";
+import Navbar from "../components/Navbar.astro";
 const posts = await getCollection("writings");
 ---
 
 <!doctype html>
-<html lang="en" class="bg-frieren bg-no-repeat bg-cover bg-fixed bg-center" }>
+<html lang="en" class="bg-no-repeat bg-cover bg-fixed bg-center">
   <Header
     title="mnprt's site"
     description="hey! i am manpreet. i love the kotlin."
   />
-  <body class="font-sans min-h-dvh md:backdrop-blur-[5px] bg-background/85">
+  <body
+    class="font-sans min-h-dvh md:backdrop-blur-[5px] bg-neutral-200 dark:bg-background/85 weeb:bg-background/85"
+  >
     <Analytics />
     <div
-      class="container mx-auto lg:max-w-screen-md text-zinc-50 text-sm md:text-base p-5 tracking-wide"
+      class="container mx-auto lg:max-w-screen-md text-textBlack dark:text-zinc-50 weeb:text-zinc-50 text-sm md:text-base p-5 tracking-wide"
     >
-      <div class="flex gap-10 pt-20 items-start">
+      <Navbar />
+      <div class="weeb:flex weeb:gap-10 pt-20 weeb:items-start">
         <Image
-          class="w-full max-w-[200px] md:max-w-[400px] h-auto object-contain"
+          class="max-h-0 weeb:block weeb:max-h-[400px] w-full max-w-[200px] md:max-w-[400px] object-contain transition-[max-height] transform ease-in-out duration-100"
           alt="frieren standing in garden of flowers"
           loading="eager"
           src={frieren}
         />
         <div class="flex flex-col gap-4 md:gap-10">
           <h1 class="text-xl md:text-4xl">mnprt.me</h1>
-          <ul class="flex flex-col gap-2">
-            <!--<li>-->
-            <!--  <a-->
-            <!--    href="/blogs"-->
-            <!--    class="hover:cursor-pointer hover:bg-blue-400/30 text-blue-500 py-2"-->
-            <!--    >[ <span class="underline">rss feed of blogs i like</span> ]-->
-            <!--  </a>-->
-            <!--</li>-->
-          </ul>
+          <ul class="flex flex-col gap-2"></ul>
         </div>
       </div>
-      <div class="flex flex-col gap-2 pt-8">
-        <h1 class="text-sm md:text-xl pb-2 text-peacock">## About</h1>
+      <div class="flex flex-col gap-2 weeb:pt-8">
+        <h1 class="text-sm md:text-xl pb-2 text-cyan-700">About</h1>
         <p>
-          Hey! I'm <span class="px-2 bg-slate-800 text-pink-400">manpreet</span
+          Hey! I'm <span
+            class="px-2 dark:bg-slate-800 weeb:bg-slate-800 dark:text-pink-400 weeb:text-pink-400 text-pink-800 bg-slate-200"
+            >manpreet</span
           >.
         </p>
         <p>
-          I enjoy writing <span class="px-2 bg-slate-800 text-pink-400"
+          I enjoy writing <span
+            class="px-2 dark:bg-slate-800 weeb:bg-slate-800 text-pink-800 dark:text-pink-400 weeb:text-pink-400 bg-slate-200"
             >Kotlin</span
           >, learning new technologies and reading <a
             href="https://news.ycombinator.com/"
-            class="hover:cursor-pointer hover:bg-blue-400/30 text-blue-500"
+            class="hover:cursor-pointer hover:bg-blue-400/30 text-blue-500 visited:text-purple-500"
             >[ hackernews ]</a
           > articles.
         </p>
         <p>
-          I am studying <span class="px-2 bg-slate-800 text-pink-400"
+          I am studying <span
+            class="px-2 dark:bg-slate-800 weeb:bg-slate-800 dark:text-pink-400 weeb:text-pink-400 text-pink-800 bg-slate-200"
             >Computer Science</span
-          > at <span class="text-fadegreen">University of Alberta</span> and am currently
-          interested in information retrieval and distributed systems.
+          > at <span
+            class="text-green-600 dark:text-fadegreen weeb:text-fadegreen"
+            >University of Alberta</span
+          > and am currently interested in information retrieval and distributed
+          systems.
         </p>
       </div>
       <div class="pt-8">
-        <h1 class="text-sm md:text-xl pb-2 text-peacock">## Posts</h1>
+        <h1 class="text-sm md:text-xl pb-2 text-cyan-700">Posts</h1>
         <ul class="flex flex-col gap-2">
           {
             posts
@@ -72,7 +76,7 @@ const posts = await getCollection("writings");
                   href={`/posts/${post.slug}/`}
                   class="visited:text-purple-500 text-blue-500"
                 >
-                  <li class="hover:cursor-pointer hover:bg-slate-800">
+                  <li class="hover:cursor-pointer hover:bg-blue-400/30">
                     [ {post.data.title} ]
                   </li>
                 </a>
@@ -81,10 +85,12 @@ const posts = await getCollection("writings");
         </ul>
       </div>
       <div class="flex flex-col gap-2 py-8">
-        <h1 class="text-sm md:text-xl pb-2 text-peacock">## Contact</h1>
+        <h1 class="text-sm md:text-xl pb-2 text-cyan-700">Contact</h1>
         <p class="pb-2">
-          I go by <span class="px-2 bg-slate-800 text-pink-400">mnprt</span> online.
-          Contact me via:
+          I go by <span
+            class="px-2 dark:bg-slate-800 weeb:bg-slate-800 text-pink-800 dark:text-pink-400 weeb:text-pink-400 bg-slate-200"
+            >mnprt</span
+          > online. Contact me via:
         </p>
         <ul class="flex flex-col gap-2">
           <li class="list-disc ml-4">
