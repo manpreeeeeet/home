@@ -42,7 +42,7 @@
   h3,
   h4,
   h5 {
-    @apply font-bold mt-4 md:mt-8 leading-3 text-cyan-700 text-sm md:text-xl;
+    @apply mt-4 md:mt-8 leading-3 text-cyan-700 text-sm md:text-xl;
   }
 
   p {
