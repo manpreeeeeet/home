@@ -83,4 +83,8 @@
   themeToggleElement?.addEventListener("mousedown", handleMouseDown);
   themeToggleElement?.addEventListener("mouseup", handleMouseUp);
   themeToggleElement?.addEventListener("mouseleave", handleMouseUp);
+
+  themeToggleElement?.addEventListener("touchstart", handleMouseDown);
+  themeToggleElement?.addEventListener("touchend", handleMouseUp);
+  themeToggleElement?.addEventListener("touchcancel", handleMouseUp);
 </script>
