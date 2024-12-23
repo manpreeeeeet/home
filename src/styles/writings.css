@@ -21,7 +21,7 @@
   }
 
   pre {
-    @apply p-2 max-h-[500px];
+    @apply p-2;
   }
 
   pre code {
