@@ -17,7 +17,7 @@ const posts = await getCollection("writings");
     description="hey! i am manpreet. i do computer stuff."
   />
   <body
-    class="font-sans min-h-dvh w-full md:backdrop-blur-[5px] bg-neutral-200 dark:bg-background/85 weeb:bg-background/85"
+    class="font-serif min-h-dvh w-full md:backdrop-blur-[5px] bg-neutral-200 dark:bg-background/85 weeb:bg-background/85"
   >
     <Analytics />
     <div
@@ -32,21 +32,28 @@ const posts = await getCollection("writings");
           src={frieren}
         />
         <div class="flex flex-col gap-4 md:gap-10">
-          <h1 class="text-xl md:text-4xl">mnprt.me</h1>
+          <h1
+            class="font-sans text-xl md:text-4xl text-textBlack/90 dark:text-textWhite weeb:text-textWhite"
+          >
+            mnprt.me
+          </h1>
           <ul class="flex flex-col gap-2"></ul>
         </div>
       </div>
       <div class="flex flex-col gap-3 weeb:pt-8">
-        <h1 class="text-sm md:text-xl pb-2 text-cyan-700">About</h1>
-        <p>
-          Hey! I'm <span
-            class="px-2 dark:bg-slate-800 weeb:bg-slate-800 dark:text-pink-400 weeb:text-pink-400 text-pink-800 bg-slate-200"
-            >manpreet</span
-          >.
-        </p>
+        <h1
+          class="font-sans text-sm md:text-xl pb-2 text-textBlack/90 dark:text-textWhite weeb:text-textWhite"
+        >
+          About
+        </h1>
+        <p>Hey! I'm manpreet.</p>
       </div>
       <div class="pt-8">
-        <h1 class="text-sm md:text-xl pb-2 text-cyan-700">Posts</h1>
+        <h1
+          class="font-sans text-sm md:text-xl pb-2 text-textBlack/90 dark:text-textWhite weeb:text-textWhite"
+        >
+          Posts
+        </h1>
         <ul class="flex flex-col gap-2">
           {
             posts
@@ -65,7 +72,11 @@ const posts = await getCollection("writings");
         </ul>
       </div>
       <div class="flex flex-col gap-2 py-8">
-        <h1 class="text-sm md:text-xl pb-2 text-cyan-700">Contact</h1>
+        <h1
+          class="text-sm md:text-xl pb-2 text-textBlack/90 dark:text-textWhite weeb:text-textWhite"
+        >
+          Contact
+        </h1>
         <p class="pb-2">
           I go by <span
             class="px-2 dark:bg-slate-800 weeb:bg-slate-800 text-pink-800 dark:text-pink-400 weeb:text-pink-400 bg-slate-200"

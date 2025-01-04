@@ -12,9 +12,11 @@ export default {
         textBlack: "#1c1e21",
         peacock: "#31748f",
         fadegreen: "#9cd8a0",
+        textWhite: "rgb(201, 202, 204)",
       },
       fontFamily: {
         mono: ["JetBrains Mono", "monospace"],
+        serif: ["PTSerrif"],
         sans: [
           "Helvetica",
           "sans-serif",

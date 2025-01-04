@@ -46,3 +46,17 @@
 body {
   padding-left: calc(100vw - 100%);
 }
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PTSerif";
+  src: url("/fonts/PTSerif-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}

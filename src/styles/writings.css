@@ -4,20 +4,10 @@
 @tailwind utilities;
 
 /* src/styles/globals.css */
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
 
 @layer base {
   p {
-    @apply text-sm md:text-base;
-  }
-
-  * {
-    @apply font-sans;
+    @apply text-base md:text-base;
   }
 
   pre {
@@ -29,7 +19,7 @@
   }
 
   pre code * {
-    @apply font-mono text-xs md:text-sm;
+    @apply font-mono text-xs md:text-xs;
   }
 
   .astro-code,
@@ -42,11 +32,11 @@
   h3,
   h4,
   h5 {
-    @apply mt-4 md:mt-8 leading-3 text-cyan-700 text-sm md:text-xl;
+    @apply font-sans mt-4 md:mt-6 leading-3 text-textBlack/90 dark:text-textWhite weeb:text-textWhite text-lg md:text-lg;
   }
 
   p {
-    @apply leading-6 my-4;
+    @apply leading-6 mt-1 mb-4;
   }
 
   li {
@@ -66,10 +56,15 @@
   }
 
   p code {
-    @apply inline-block text-sm md:text-base px-2 py-0 dark:bg-slate-800 weeb:bg-slate-800 text-pink-800 dark:text-pink-400 weeb:text-pink-400 bg-slate-200;
+    @apply font-serif italic inline-block text-sm md:text-base p-0 dark:bg-[#24292e] weeb:bg-[#24292e] text-pink-800 dark:text-textWhite weeb:text-textWhite bg-slate-200;
   }
 
   blockquote {
+    @apply border-l-2 border-textWhite italic;
+  }
+
+  blockquote p {
+    @apply ml-2;
   }
 }
 
