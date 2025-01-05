@@ -60,3 +60,24 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "PTSerif";
+  src: url("/fonts/PTSerif-Italic.ttf") format("ttf");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "PTSerif";
+  src: url("/fonts/PTSerif-Bold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PTSerif";
+  src: url("/fonts/PTSerif-BoldItalic.ttf") format("ttf");
+  font-weight: bold;
+  font-style: italic;
+}
