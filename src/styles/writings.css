@@ -32,7 +32,7 @@
   h3,
   h4,
   h5 {
-    @apply font-sans mt-4 md:mt-6 leading-3 text-textBlack/90 dark:text-textWhite weeb:text-textWhite text-lg md:text-lg;
+    @apply font-sans mt-4 md:mt-6 text-textBlack/90 dark:text-textWhite weeb:text-textWhite text-lg md:text-lg;
   }
 
   p {
