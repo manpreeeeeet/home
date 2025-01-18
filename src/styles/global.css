@@ -11,19 +11,19 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-pink-800/10 dark:bg-inherit weeb:bg-inherit;
+    @apply bg-gray-600/30 dark:bg-inherit weeb:bg-inherit;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-pink-800/30 dark:bg-slate-600 weeb:bg-slate-600;
+    @apply bg-gray-600 dark:bg-slate-600 weeb:bg-slate-600;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-pink-800/30 dark:bg-slate-700 weeb:bg-slate-700;
+    @apply bg-gray-600 dark:bg-slate-700 weeb:bg-slate-700;
   }
 
   ::-webkit-scrollbar-corner {
-    @apply bg-pink-800/10 dark:bg-transparent weeb:bg-transparent;
+    @apply bg-gray-600 dark:bg-transparent weeb:bg-transparent;
   }
   :root {
     --radius: 0.5rem;

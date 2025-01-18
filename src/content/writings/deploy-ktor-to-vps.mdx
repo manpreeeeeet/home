@@ -1,20 +1,18 @@
 ---
 title: deploying ktor application in a vps
+date: 2024-11-13
 ---
 import { Image } from 'astro:assets';
 import githubActionImage from '../assets/github-action.png';
 
 
-#  Deploying Ktor app in a VPS using github actions
-<div class="h-0.5 w-full my-2 bg-pink-800/30 dark:bg-slate-600 weeb:bg-slate-600"></div>
+<h1 className="text-3xl pb-6">Deploying Ktor app in a VPS using github actions</h1>
 
-##  Overview
 This is my simple docker + VPS setup for deploying Ktor application. Read [ktor's deployment documentation](https://ktor.io/docs/server-deployment.html) if you want to learn about different/right way of deploying a Ktor app.
 
 In this setup we deploy automatically whenever a code change is pushed to `GitHub`. We rely on [`github actions`](https://docs.github.com/en/actions) to build and push the docker image to [`ghcr`](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), and to trigger a new deployment on the server.
 <Image src={githubActionImage} alt="A rocketship in space." class="max-w-[100%] mx-auto my-4"/>
 
-##  Setting up the project
 ###  Ktor Gradle Plugin
 Configure [`ktor gradle plugin`](https://ktor.io/docs/server-fatjar.html), so we can build a `fatJar` using `gradlew fatJar` command.
 ```kts

@@ -33,7 +33,7 @@ const posts = await getCollection("writings");
         />
         <div class="flex flex-col gap-4 md:gap-10">
           <h1
-            class="font-sans text-xl md:text-4xl text-textBlack/90 dark:text-textWhite weeb:text-textWhite"
+            class="text-xl md:text-4xl text-textBlack/90 dark:text-textWhite weeb:text-textWhite"
           >
             mnprt.me
           </h1>
@@ -42,7 +42,7 @@ const posts = await getCollection("writings");
       </div>
       <div class="flex flex-col gap-3 weeb:pt-8">
         <h1
-          class="font-sans text-sm md:text-xl pb-2 text-textBlack/90 dark:text-textWhite weeb:text-textWhite"
+          class="text-sm md:text-xl pb-2 text-textBlack/90 dark:text-textWhite weeb:text-textWhite"
         >
           About
         </h1>
@@ -50,7 +50,27 @@ const posts = await getCollection("writings");
       </div>
       <div class="pt-8">
         <h1
-          class="font-sans text-sm md:text-xl pb-2 text-textBlack/90 dark:text-textWhite weeb:text-textWhite"
+          class="text-sm md:text-xl pb-2 text-textBlack/90 dark:text-textWhite weeb:text-textWhite"
+        >
+          Projects
+        </h1>
+        <div class="flex flex-col gap-2">
+          <div
+            class="border-[1px] p-2 border-textWhite dark:border-textWhite/30 weeb:border-textWhite/30"
+          >
+            <h1 class="hover:cursor-pointer hover:bg-blue-400/30 text-blue-500">
+              <a href="https://hnsearch.mnprt.me"> Hackernews Search </a>
+            </h1>
+            <p>
+              Search engine for hackernews. Currently indices 100k items and
+              uses BM25 for ranking.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="pt-8">
+        <h1
+          class="text-sm md:text-xl pb-2 text-textBlack/90 dark:text-textWhite weeb:text-textWhite"
         >
           Posts
         </h1>
@@ -58,13 +78,18 @@ const posts = await getCollection("writings");
           {
             posts
               .filter((post) => !post.data.hidden)
+              .sort((p1, p2) => p1.data.date < p2.data.date)
               .map((post) => (
                 <a
                   href={`/posts/${post.slug}/`}
                   class="visited:text-purple-500 text-blue-500"
                 >
                   <li class="hover:cursor-pointer hover:bg-blue-400/30">
-                    [ {post.data.title} ]
+                    {post.data.date.toLocaleString("default", {
+                      month: "short",
+                    })}
+                    {post.data.date.getDate()}, {post.data.date.getFullYear()} :
+                    {post.data.title}
                   </li>
                 </a>
               ))
@@ -102,10 +127,6 @@ const posts = await getCollection("writings");
           </li>
           <li class="list-disc ml-4">[ discord: manpreeeeeet ]</li>
         </ul>
-      </div>
-      <div
-        class="h-0.5 w-full my-2 bg-pink-800/30 dark:bg-slate-600 weeb:bg-slate-600"
-      >
       </div>
     </div>
   </body>

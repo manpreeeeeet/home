@@ -15,19 +15,15 @@ const { title, description } = Astro.props;
 <html lang="en" class="bg-no-repeat bg-cover bg-fixed bg-center">
   <Header title={title} description={description} />
   <body
-    class="font-sans min-h-dvh w-full md:backdrop-blur-[5px] bg-neutral-200 dark:bg-background/85 weeb:bg-background/85"
+    class="font-sans min-h-dvh w-full md:backdrop-blur-[5px] bg-[#FFFFFF] dark:bg-background/85 weeb:bg-background/85"
   >
     <Analytics />
     <div
-      class="container font-serif mx-auto lg:max-w-screen-md text-textBlack dark:text-textWhite weeb:text-zinc-50 p-5 tracking-wide"
+      class="container font-serif mx-auto lg:max-w-screen-md text-[#334] dark:text-textWhite weeb:text-zinc-50 p-5 tracking-wide"
     >
       <Navbar />
       <slot />
       <div class="my-10"></div>
-      <div
-        class="h-0.5 w-full my-2 bg-pink-800/30 dark:bg-slate-600 weeb:bg-slate-600"
-      >
-      </div>
     </div>
   </body>
 </html>
