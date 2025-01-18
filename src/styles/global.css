@@ -56,28 +56,28 @@ body {
 
 @font-face {
   font-family: "PTSerif";
-  src: url("/fonts/PTSerif-Regular.ttf") format("truetype");
+  src: url("/fonts/PTSerif-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "PTSerif";
-  src: url("/fonts/PTSerif-Italic.ttf") format("truetype");
+  src: url("/fonts/PTSerif-Italic.woff2") format("woff2");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: "PTSerif";
-  src: url("/fonts/PTSerif-Bold.ttf") format("truetype");
+  src: url("/fonts/PTSerif-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "PTSerif";
-  src: url("/fonts/PTSerif-BoldItalic.ttf") format("truetype");
+  src: url("/fonts/PTSerif-BoldItalic.woff2") format("woff2");
   font-weight: bold;
   font-style: italic;
 }
