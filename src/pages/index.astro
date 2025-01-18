@@ -78,7 +78,6 @@ const posts = await getCollection("writings");
           {
             posts
               .filter((post) => !post.data.hidden)
-              .sort((p1, p2) => p1.data.date < p2.data.date)
               .map((post) => (
                 <a
                   href={`/posts/${post.slug}/`}
