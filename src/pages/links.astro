@@ -1,0 +1,43 @@
+---
+// src/pages/writings.astro
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Analytics from "@vercel/analytics/astro";
+import Navbar from "../components/Navbar.astro";
+---
+
+<!doctype html>
+<html lang="en" class="bg-no-repeat bg-cover bg-fixed bg-center">
+  <Header
+    title="mnprt's site"
+    description="hey! i am manpreet. i do computer stuff."
+  />
+  <body
+    class="font-serif min-h-dvh w-full md:backdrop-blur-[5px] bg-neutral-200 dark:bg-background/85 weeb:bg-background/85"
+  >
+    <Analytics />
+    <div
+      class="container mx-auto lg:max-w-screen-md text-textBlack dark:text-zinc-50 weeb:text-zinc-50 text-sm md:text-base p-5 tracking-wide"
+    >
+      <Navbar />
+      <ul class="flex flex-col gap-2 pt-20">
+        {
+          ["https://notes.eatonphil.com/", "https://lucumr.pocoo.org/"].map(
+            (link) => {
+              return (
+                <li class="list-disc ml-4">
+                  <a
+                    href={link}
+                    class="hover:cursor-pointer hover:bg-blue-400/30 text-blue-500"
+                  >
+                    {link}
+                  </a>
+                </li>
+              );
+            },
+          )
+        }
+      </ul>
+    </div>
+  </body>
+</html>
