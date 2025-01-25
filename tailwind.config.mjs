@@ -16,7 +16,7 @@ export default {
       },
       fontFamily: {
         mono: ["JetBrains Mono", "monospace"],
-        serif: ["PTSerrif"],
+        serif: ["PTSerif", "Merriweather"],
         sans: [
           "Helvetica",
           "sans-serif",
