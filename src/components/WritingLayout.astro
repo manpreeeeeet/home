@@ -4,6 +4,7 @@ import "../styles/writings.css";
 import Header from "./Header.astro";
 import Analytics from "@vercel/analytics/astro";
 import Navbar from "./Navbar.astro";
+import Comments from "./Comments";
 export interface Props {
   title?: string;
   description?: string;
@@ -23,7 +24,9 @@ const { title, description } = Astro.props;
     >
       <Navbar />
       <slot />
-      <div class="my-20"></div>
+      <div class="h-[1px] my-5 bg-[#334] dark:bg-textWhite weeb:text-textWhite">
+      </div>
+      <Comments client:only="react" />
     </div>
   </body>
 </html>
