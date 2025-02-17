@@ -55,7 +55,7 @@ Note: We will need to use the same pre-processing on user queries to find the co
 in our index.
 
 ## Dealing with frequent words
-Some words such as "and, the" are used frequently and is probably not something you use in your search queries. We will choose to exclude these [stop words](https://en.wikipedia.org/wiki/Stop_word)
+Some words such as "and, the" are used frequently and are probably not something you use in your search queries. We will choose to exclude these [stop words](https://en.wikipedia.org/wiki/Stop_word)
 in our processing stage, since it will help us speed up queries.
 
 So our final processing stage looks like:
@@ -76,7 +76,7 @@ We will learn what these two terms mean in the following sections.
 
 # Frequency
 We can calculate and store frequency of each token in a document when we are building our index. However, raw token frequency (tf) is not very useful, as it
-favors longer documents Instead, we will use `log(frequency)` to dampen this effect.
+favors longer documents. Instead, we will use `log(frequency)` to dampen this effect.
 
 # Rarity
 What do I mean by rarity? Imagine you search for "happy frieren", the term "happy" appears in a lot more documents compared to "frieren" and there's a high probability
@@ -111,7 +111,7 @@ That is, we made our search engine faster and added a ranking algorithm to sort 
 Despite the simplicity, the search engine we have made in the post returns good search results. I indexed
 some hackernews submissions using this implementation, and I was pretty happy with the results. You can try it [here](https://hnsearch.mnprt.me/).
 
-I have skipped lots of details to keep this short. I hope you learnt something from this post, and it encourages you to learn more about search.
+I have skipped lots of details to keep this short. I hope you learned something from this post, and it encourages you to learn more about search.
 
 # Some side notes
 * Storing the index in a database: I use a simple table with the schema below to store my index on disk. There might be better strategies, but I have not read/looked into it.
