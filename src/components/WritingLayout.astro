@@ -24,8 +24,7 @@ const { title, description } = Astro.props;
     >
       <Navbar />
       <slot />
-      <div class="h-[1px] my-5 bg-[#334] dark:bg-textWhite weeb:text-textWhite">
-      </div>
+      <hr class="py-2" />
       <Comments client:only="react" />
     </div>
   </body>
