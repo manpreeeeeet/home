@@ -8,8 +8,8 @@ import githubActionImage from '../assets/github-action.png';
 
 <h1 className="text-3xl pb-6">Writing a search engine.</h1>
 
-I learnt about search 2 years ago, when I attended a lecture on Information retrieval. I have been wanting to make a search engine ever since.
-I finally took the time to make one this year. The project indices hackernews and is deployed [here](https://hnsearch.mnprt.me/).
+I earned about search 2 years ago, when I attended a lecture on Information retrieval. I have been wanting to make a search engine ever since.
+I finally took the time to make one this year. The project indices HackerNews and is deployed [here](https://hnsearch.mnprt.me/).
 
 In this post, I will walk you through the theory behind making one and the process I took to make it. This post will not be a code walkthrough;
 however, you should be able to follow the code [here](https://github.com/manpreeeeeet/hnsearch) after this post.
@@ -21,7 +21,7 @@ all the documents and return the ones that contain the words we are looking for.
 ```
 documents.filter(doc -> doc.contains(query))
 ```
-This approach is slow and treats every document as equal. If your search engine gave returned all the documents without any ranking you will probably be not very
+This approach is slow and treats every document as equal. If your search engine returned all the documents without any ranking you will probably be not very
 happy. Let's try to address these problems.
 
 # Making it faster
@@ -42,12 +42,14 @@ Our index currently matches the exact word, this is a problem. What if our user 
 the documents that mention "apple" might be what user wants. We can address this by processing our text before adding it to the index. This processing is called
 [normalization](https://en.wikipedia.org/wiki/Text_normalization).
 
-In our search engine, we will use 2 types of normalization. Note: We will need to use the same pre-processing on user queries to find the correct tokens
-in our index.
+In our search engine, we will use 2 types of normalization.
 * Case normalization: Convert all words to same case (lowercase).
-* Stemming: Match similar words to the same token.
+* Stemming: Match similar words to the same token for example, "fishing" to "fish".
 
 Stemming: There are several stemming algorithms. We will use [porter stemming algorithm](https://vijinimallawaarachchi.com/2017/05/09/porter-stemming-algorithm/).
+
+Note: We will need to use the same pre-processing on user queries to find the correct tokens
+in our index.
 
 ## Dealing with frequent words
 Some words such as "and, the" are used frequently and is probably not something you use in your search queries. We will choose to exclude these [stop words](https://en.wikipedia.org/wiki/Stop_word)
