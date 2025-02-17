@@ -39,7 +39,7 @@ choose to represent a word in the map.
 
 # Processing
 Our index currently matches the exact word, this is a problem. What if our user searches for "apples"? The current index would return no document even though
-the documents that mention "apple" might be what user wants. We can address this by processing our text before adding it to the index. This processing is called
+the documents that mention "apple" might be what the user wants. We can address this by processing our text before adding it to the index. This processing is called
 [normalization](https://en.wikipedia.org/wiki/Text_normalization).
 
 In our search engine, we will use 2 types of normalization.
@@ -53,7 +53,7 @@ in our index.
 
 ## Dealing with frequent words
 Some words such as "and, the" are used frequently and is probably not something you use in your search queries. We will choose to exclude these [stop words](https://en.wikipedia.org/wiki/Stop_word)
-in our processing stage as well, since it will help us speed up queries.
+in our processing stage, since it will help us speed up queries.
 
 So our final processing stage looks like:
 ```
@@ -87,7 +87,7 @@ Combining both the frequency and rarity gives us a way to rank documents now.
 
 # Putting it all together
 By now, we have addressed all the original problems in our original simple search. That is, we made our search engine
-faster and added a ranking algorithm to sort the documents by relevance
+faster and added a ranking algorithm to sort the documents by relevance.
 
 Despite the simplicity, the search engine we have made in the post returns good search results. I indexed
 some hackernews submissions using this implementation, and I was pretty happy with the results. You can try it [here](https://hnsearch.mnprt.me/).
