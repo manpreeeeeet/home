@@ -7,7 +7,7 @@
   }
 
   ::-webkit-scrollbar {
-    @apply w-2 h-2;
+    @apply w-3 h-2;
   }
 
   ::-webkit-scrollbar-track {
@@ -15,15 +15,15 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-gray-600 dark:bg-slate-600 weeb:bg-slate-600;
+    @apply bg-gray-600/30 dark:bg-slate-600 weeb:bg-slate-600;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gray-600 dark:bg-slate-700 weeb:bg-slate-700;
+    @apply bg-gray-600/30 dark:bg-slate-700 weeb:bg-slate-700;
   }
 
   ::-webkit-scrollbar-corner {
-    @apply bg-gray-600 dark:bg-transparent weeb:bg-transparent;
+    @apply bg-gray-600/30 dark:bg-transparent weeb:bg-transparent;
   }
   :root {
     --radius: 0.5rem;

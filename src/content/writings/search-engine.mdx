@@ -1,111 +1,110 @@
 ---
-title: search engine
-date: 2024-01-26
-hidden: true
+title: Writing a search engine
+date: 2024-02-17
 ---
 import { Image } from 'astro:assets';
 import githubActionImage from '../assets/github-action.png';
 
 
-<h1 className="text-3xl pb-6">Search Engine</h1>
-As a person, why do I want to write this piece of content?
-I love search, I think it is a fascinating topic. We depends on search so much, everything is search. We are always seeking information.
-So how does it work? How is it fast? This will answer those questions to satisfy the pure curiosity questions. This article will exist because
-I love the computers and I love the search.
+<h1 className="text-3xl pb-6">Writing a search engine.</h1>
 
-What are the pain points of my target audience regarding this particular topic?
-There are no pain points. The target audience will be someone who wants to know how search works. Purely informational.
+I learnt about search 2 years ago, when I attended a lecture on Information retrieval. I have been wanting to make a search engine ever since.
+I finally took the time to make one this year. The project indices hackernews and is deployed [here](https://hnsearch.mnprt.me/).
 
-Who am I writing this piece of content for? Are they beginner developers, mid-level developers, product managers, designers, etc?
-This is not for beginners, I assume programming knowledge. Although I do also share how to apply this article to build a search engine so it's
-not exactly senior devs.
+In this post, I will walk you through the theory behind making one and the process I took to make it. This post will not be a code walkthrough;
+however, you should be able to follow the code [here](https://github.com/manpreeeeeet/hnsearch) after this post.
 
-Search is beautiful. I have been interested in search
+# Simple search
+A search engine helps you find documents that contain information you are looking for. A simple implementation would just loop through
+all the documents and return the ones that contain the words we are looking for.
+
+```
+documents.filter(doc -> doc.contains(query))
+```
+This approach is slow and treats every document as equal. If your search engine gave returned all the documents without any ranking you will probably be not very
+happy. Let's try to address these problems.
+
+# Making it faster
+We will use something called an inverted index to make it faster. Instead of comparing the entire document to find a word, we will invert the process and
+match a `word` to a document. We can achieve this by using a hashmap that maps a word to list of document-ids.
+```
+apple -> [1, 4, 5]
+cat -> [3, 5]
+```
+
+This allows us to find all relevant documents in O(1) time.
+
+We will refer to each word (key) in the map as `token`. A token is how we
+choose to represent a word in the map.
+
+# Processing
+Our index currently matches the exact word, this is a problem. What if our user searches for "apples"? The current index would return no document even though
+the documents that mention "apple" might be what user wants. We can address this by processing our text before adding it to the index. This processing is called
+[normalization](https://en.wikipedia.org/wiki/Text_normalization).
+
+In our search engine, we will use 2 types of normalization. Note: We will need to use the same pre-processing on user queries to find the correct tokens
+in our index.
+correct results.
+* Case normalization: Convert all words to same case (lowercase).
+* Stemming: Match similar words to the same token.
+
+Stemming: There are several stemming algorithms. We will use [porter stemming algorithm](https://vijinimallawaarachchi.com/2017/05/09/porter-stemming-algorithm/).
+
+## Dealing with frequent words
+Some words such as "and, the" are used frequently and is probably not something you use in your search queries. We will choose to exclude these [stop words](https://en.wikipedia.org/wiki/Stop_word)
+in our processing stage as well.
+
+So our final processing stage looks like:
+```
+tokens = words.filter(word -> !word.isStopWord()).map(word -> word.lower() -> word.stem())
+```
+
+# Ranking documents by relevance
+Now that we can find the documents faster, how do we rank them? We will use a simple ranking algorithm that relies on these principles:
+* A document is more relevant if it has higher frequency of the query word.
+* A document is more important if it has a rare word i.e. a word that is present in only a few documents.
+
+We will rank each document using the formula:
+```
+rank(document, token) = token_frequency(tf) * inverse_document_frequency(idf)
+```
+We will learn what these two terms mean in the following sections.
+
+# Frequency
+We can calculate and store frequency of each token in a document when we are building our index. However, raw token frequency (tf) is not very useful, as it
+favors longer documents Instead, we will use `log(frequency)` to dampen this effect.
+
+# Rarity
+We will determine rarity using "inverse document frequency (idf)". Idf decreases if a token appears in more documents, and increases if only a few
+documents contain the said token. It can be defined as:
+```
+(Total documents in our index) / (no. of documents containing the token)
+```
+Again, to avoid overly favoring rarity, we will use log of this value.
+
+Combining both the frequency and rarity gives us a way to rank documents now.
+
+# Putting it all together
+By now, we have addressed all the original problems in our original simple search. That is, we made our search engine
+faster and added a ranking algorithm to sort the documents by relevance
+
+Despite the simplicity, the search engine we have made in the post returns good search results. I indexed
+some hackernews submissions using this implementation, and I was pretty happy with the results. You can try it [here](https://hnsearch.mnprt.me/).
+
+I have skipped lots of details to keep this short. I hope you learnt something from this post, and it encourages you to learn more about search.
+
+# Some side notes
+* Storing the index on db: I use a simple table with the schema below to store my index on disk. There might be better strategies, but I have not read/looked into it.
+```
+Token      : string
+DocumentID : int
+Frequency  : int
+```
+
+* Both the token frequency and inverse document frequency can be computed when building / updating the index. We can
+use this to make our search faster.
 
 
-Other articles show you how to build this exact thing. The process is same tokenize -> stop words -> inverse index -> rank -> profit.
-This article will discuss these concepts and then walk through using the concepts to build a search engine for hackernews backed by db.
-The unique feature will be a fully working github repo, and also the fact that this stores the data on disk.
-
-I can also discuss niche irrelevant small performance wins.
-
-This article will not be about code walkthrough. I will provide examples but also not explain them since that is not the main focus of it.
-
-I have been interested in information retrival since I attended by first lecture on the topic 2 years ago by skipping my actual class. Search
-engines feel like magic. Finding information you need in few milliseconds. Like every other person I seek the nostaligia for when search used to
-be good. Not that I have ever actually seen a better google but I will continue to believe in that it exists.
-
-The best way to deal with a problem is make it worse. Driven by too many tweets making fun of google search I decided to fix it by building my own
-so I can make fun of google better. Surely if I only index hackernews we can get good results that satisfy all my needs.
-
-How do we make search fast? How to search a word fast enough. Searching through all the words in a document and then returning a document based
-on whether there was a match is expensive.
-
-So what exactly is a search engine. To put it simply, a web search engine consists of a crawler and a search engine. We will focus on the search part
-in this article, although I will provide of code that I used to use hackernews api to get the data.
-
-The inverse index
-Inverse index is a data structure that stores a word and a list of ids of a document where the said word can be found. It can be represented as a
-`map[string][int]`. So we can simply retrieve all the words from a document and put them in this map, and we get ourselves a really fast search
-algorithm.
-
-Processing
-We can process the tokens before adding them to the index. Processing helps make the index smaller and return more results per query.
-
-Stop words
-English language has some common stop words: like and, is, the that appears a lot but it is probably not something you are looking for whenever you
-search a google query. We can manually remove these words but I will use a library that contains common stop words for english language to make it easier.
-
-Stemming
-Stemming matches similar words to a same token. Example apple and apples will be mapped to the same word. So searching for one will return the documents
-that contain both apple and apples in it. We will use Port stemmer implementation to do the stemming for us.
-
-How to store this index on a database?
-We can use a table of following schema which is just a token | id
-
-
-Ranking
-We will use BM25 algorithm for ranking our results. Simply put BM25 algorithm works by finding how rare a word is and multiplies it by the
-frequency of the word in each document. There's a good article explaining the algorithm. But logically put pseudocode for this algorithm is
-
-frequency(word) in document * (total documents / # of documents where the word appears).
-The more a word appears the smaller the value is for IDF.
-
-BM25 normalizes the frequency so a long document doesn't have unfair advantage over a short one.
-
-
-Putting it all together we first retrieve all the documents that contain a said token and then we sort it using the ranking algorithm and
-return the results.
-
-
-
-Designing a search engine for hackernews
-Now that we have the learnt the theory behind search I will share how I went about designing a search engine for hackernews.
-
-Documents
-Documents in search can be anything. In this case a hackernews submission is a document. A hackernews submission consists of a URL submission and
-comments discussing the submission. While it is possible to get some information about the content of submission from the title, we will also rely
-on comments to determine what the submission is about.
-
-So I decided a document will consist of "title: text, and comments []text".
-
-Tokenization
-After we get our document, it's time to process the text. We will do so by splitting the text by word boundaries. And the filtering the stop words
-and stemming them. After we have our processed tokens, it's time to store our inverted index. I store our inverted index in two separate tables, one
-for tokens in documents in one for tokens in comments. I used the following schema for this data.
-
-Some design decisions. I store the frequency of all tokens in a document including comments to make it faster to retrieve this data.
-
-Search
-First step in our search will be retrieving all the document ids that a contain a token user inputs in a search query. After we retrieve these document ids
-it's time to rank them.
-
-Let's start with implementation for inverse document frequency.
-
-Term frequency can be calculated by:
-
-We use these two to get a relevancy score which we use to sort the document ids. I return only the first 20 matches in my query. After we have our documents ids
-ranked we can just retrieve the relevant data including comments that mention that token and send it back to the user.
 
 
 
