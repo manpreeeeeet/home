@@ -34,7 +34,8 @@ apple -> [1, 4, 5]
 cat -> [3, 5]
 ```
 
-This allows us to find all relevant documents in O(1) time.
+This allows us to find all relevant documents in O(1) time. Even though building the index still takes O(N) time, we only need to build the inverted index once,
+and we can process all user queries using the same index.
 
 We will refer to each word (key) in the map as `token`. A token is how we
 choose to represent a word in the map.
@@ -78,6 +79,11 @@ We can calculate and store frequency of each token in a document when we are bui
 favors longer documents Instead, we will use `log(frequency)` to dampen this effect.
 
 # Rarity
+What do I mean by rarity? Imagine you search for "happy frieren", the term "happy" appears in a lot more documents compared to "frieren" and there's a high probability
+that you are looking for documents that mention "frieren" so we need to give more importance to the documents that mention "frieren". That is, the documents that mention
+the rare terms should rank higher.
+
+
 We will determine rarity using "inverse document frequency (idf)". Idf decreases if a token appears in more documents, and increases if only a few
 documents contain the said token. It can be defined as:
 ```
@@ -85,7 +91,18 @@ documents contain the said token. It can be defined as:
 ```
 Again, to avoid overly favoring rarity, we will use log of this value.
 
-Combining both the frequency and rarity gives us a way to rank documents now.
+Combining both the frequency and rarity gives us a way to rank documents now. Here's what the final ranking algorithm would look like:
+```
+// these are retrieved using the inverted index
+relevant_docs = set of documents that mention a token in user query
+
+for token in query:
+    for doc in relevant_docs:
+        // score for each doc starts at 0
+        score[doc] += tf(doc, token) * idf(token)
+
+return relevant_docs sorted by score
+```
 
 # Putting it all together
 This is all we need to build a simple search engine. By now, we have addressed all the original problems in our original simple search.
