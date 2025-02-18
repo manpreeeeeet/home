@@ -2,7 +2,6 @@
 import "../styles/global.css";
 import "../styles/writings.css";
 import Header from "./Header.astro";
-import Analytics from "@vercel/analytics/astro";
 import Navbar from "./Navbar.astro";
 import Comments from "./Comments";
 export interface Props {
@@ -18,7 +17,6 @@ const { title, description } = Astro.props;
   <body
     class="font-sans min-h-dvh w-full md:backdrop-blur-[5px] bg-[#FFFFFF] dark:bg-background/85 weeb:bg-background/85"
   >
-    <Analytics />
     <div
       class="container font-serif mx-auto lg:max-w-screen-md text-[#334] dark:text-textWhite weeb:text-zinc-50 p-5 tracking-wide"
     >
